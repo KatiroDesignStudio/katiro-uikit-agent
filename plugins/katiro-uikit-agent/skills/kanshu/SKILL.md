@@ -33,11 +33,11 @@ Dans le doute, c'est une déduction. Juger qu'un lot est réussi en est une auss
 L'agent ne peut pas enregistrer de version dans Figma. Avant chaque lot de seiton (un seul point par lot, qui couvre ses relances et corrections), demande : « Enregistre une version dans Figma (Cmd+Option+S, ou Fichier > Enregistrer dans l'historique des versions), nommée « uikit : avant {lot} ». C'est fait ? » Options : `C'est fait` ; `Continuer sans`. Note la réponse au journal.
 
 ## Démarrage (à chaque invocation, reprise comprise)
-1. Le serveur MCP Figma doit être connecté (outils `use_figma`, `create_session`). Sinon, explique comment le connecter (`/mcp`) et arrête-toi.
+1. Le serveur MCP Figma doit être connecté (outils `use_figma`, `create_session`). Sinon, explique comment le connecter (`/mcp`) et arrête-toi. Dès que le lien est connu, appelle `create_session` une fois par session de travail.
 2. Lis tous les fichiers de `${CLAUDE_SKILL_DIR}/references/`.
 3. `uikit.md` absent du dossier courant : prends le lien Figma dans la demande, sinon demande-le. Puis la question de prérequis : « Quel est ton plan Figma et ton siège ? » Options : `Professional ou plus, siège Full ou Dev (Recommandé)` ; `Starter (gratuit)` ; `Siège View ou Collab`. Starter, View ou Collab : explique que l'outil Figma y est limité à 6 appels par mois, et que le plan Starter est en plus limité à 3 pages et à 1 mode de variables, puis arrête-toi sans rien créer. Sinon : copie `${CLAUDE_SKILL_DIR}/templates/uikit.md` à la racine, crée `.uikit/`, et remplis l'en-tête (lien, plan et siège, dates).
 4. Lis `uikit.md` : phase, prochaine action, questions ouvertes et reportées. Demande vide : reprends à la prochaine action.
-5. Chaque prompt d'agent contient : le lien Figma, le chemin absolu de `uikit.md`, `${CLAUDE_SKILL_DIR}/references/`, le mode ou l'identifiant de lot, les décisions qui s'appliquent.
+5. Chaque prompt d'agent contient : le lien Figma, l'identifiant de session Figma, le chemin absolu de `uikit.md`, `${CLAUDE_SKILL_DIR}/references/`, le mode ou l'identifiant de lot, les décisions qui s'appliquent.
 
 ## Les phases
 
@@ -63,6 +63,7 @@ Une phase sans constat ni question est marquée « rien à faire », sans appel 
 5. Questions sur liste : les écrans retenus ; les doublons (pour chaque groupe, la version proposée) ; les parcours de l'arborescence (option `Pas besoin de parcours`) ; le kit existant s'il y en a un :
    - `Repartir de lui` : ses variables et styles sont repris en phase 2 (correspondances en question sur liste). Ils peuvent seulement être renommés : un changement de valeur passe par une nouvelle variable, rebranchée dans les écrans en phase 7. Ses composants sont reconstruits au propre comme les autres ;
    - `Le laisser intact` : sa page passe après le séparateur, exclue du scan et des compteurs.
+   Une couverture existante (« Cover »…) : `La garder` (elle reste en tête, la page `Couverture` du plugin n'est pas créée) ou `La remplacer` (elle passe après le séparateur).
 6. Zéro écran retenu : question (autre règle ou arrêt). Sinon, écris `.uikit/perimetre-valide.json` (écrans retenus après corrections, version retenue de chaque doublon, parcours) et la section Périmètre de `uikit.md`. Le périmètre devient R0.
 
 ### Phase 1 : Scan et structure

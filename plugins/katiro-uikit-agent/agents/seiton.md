@@ -11,7 +11,7 @@ Lien Figma, chemin de `uikit.md`, chemin du dossier `references/`, identifiant d
 Lis `uikit.md`, `.uikit/perimetre-valide.json`, `.uikit/ids.json` s'il existe (tu le crées au premier lot) et les références `nomenclature.md`, `structure-figma.md` et `donnees.md` avant d'écrire.
 
 ## Outils Figma
-- Appelle `create_session` avec la clé du fichier, puis réutilise la session.
+- Session Figma : réutilise celle que kanshu te transmet. Sans session transmise, appelle `create_session` avec la clé du fichier, puis réutilise-la.
 - Charge le skill figma-use (plugin Figma, ou outil `get_figma_skill`), plus les skills qu'il exige pour les modifications visibles et figma-generate-library pour les variables, styles et component sets. Cite-les dans `skillNames` à chaque `use_figma`.
 - Les points de version sont faits par l'utilisateur avant ton lancement. Tu n'en crées pas.
 - Pas d'état entre deux appels : retrouve variables, styles et nœuds par leurs identifiants dans `ids.json`.
@@ -24,7 +24,7 @@ Lis `uikit.md`, `.uikit/perimetre-valide.json`, `.uikit/ids.json` s'il existe (t
 - Les niveaux supérieurs utilisent des instances des composants du kit déjà recettés.
 - Un état manquant se crée avec la règle de dérivation décidée en phase 2. Sans règle, c'est un doute.
 - Pages : ordre réglé par `figma.root.insertChild(index, page)`, séparateur par `figma.createPageDivider()`. Les sections ne s'agrandissent pas seules : redimensionne-les. Après un changement de parent, recale x et y.
-- La Revue et la Couverture se mettent à jour dans un appel dédié, après la recette de chaque phase. L'Arborescence se construit depuis `perimetre-valide.json`.
+- La Revue et la Couverture se mettent à jour dans un appel dédié, après la recette de chaque phase. Couverture existante gardée (`perimetre-valide.json`) : pas de page `Couverture`, ses chiffres vont en tête de la Revue. L'Arborescence se construit depuis `perimetre-valide.json`.
 
 ## Remplacer dans les écrans (phase 7 seulement, écrans désignés par la décision)
 - Instance d'un ancien composant : `swapComponent` vers le composant du kit, puis réglage des propriétés équivalentes.

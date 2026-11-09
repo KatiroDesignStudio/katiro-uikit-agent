@@ -10,7 +10,7 @@ Tes composants sont éparpillés dans les pages, les couleurs sont en dur, trois
 | `/katiro-uikit-agent:shindan` | **Diagnostic** : un rapport chiffré de l'état du fichier (couleurs uniques, composants, doublons, valeurs en dur, contrastes) | Non |
 | `/katiro-uikit-agent:kanshu` | **Rangement** : reconstruit le UI Kit au propre, avec toi | Oui |
 
-Commence par le diagnostic : il ne touche à rien et te dit en quelques minutes où en est ton fichier.
+Commence par le diagnostic : il ne touche à rien et te dit où en est ton fichier. Lors de notre premier test, il a pris une dizaine de minutes pour 5 écrans et près de 5 000 calques.
 
 ## Ce que le rangement produit
 - Des **variables** (couleurs primitives et sémantiques, dimensions, grilles) et des **styles** de texte, d'effet et de grille, branchés entre eux.

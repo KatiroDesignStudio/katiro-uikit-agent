@@ -11,7 +11,7 @@ Références : `${CLAUDE_SKILL_DIR}/../kanshu/references/`
 Tu mesures, tu n'écris rien dans Figma et tu ne poses que les questions nécessaires au diagnostic. Le relevé est fait par l'agent `katiro-uikit-agent:seiri`, lancé au premier plan.
 
 ## Déroulé
-1. Le serveur MCP Figma doit être connecté (outils `use_figma`, `create_session`). Sinon, explique comment le connecter (`/mcp`) et arrête-toi. Prends le lien Figma dans la demande, sinon demande-le.
+1. Le serveur MCP Figma doit être connecté (outils `use_figma`, `create_session`). Sinon, explique comment le connecter (`/mcp`) et arrête-toi. Prends le lien Figma dans la demande, sinon demande-le, puis appelle `create_session` et transmets l'identifiant de session à seiri.
 2. Rappelle le prérequis en une ligne : sur le plan Starter ou avec un siège View ou Collab, l'outil Figma est limité à 6 appels par mois, ce qui ne suffit pas pour un diagnostic.
 3. Crée `.uikit/` dans le dossier courant s'il n'existe pas.
 4. **seiri, mode survol**. Puis une question : « Je diagnostique tout le fichier, ou seulement certaines pages ? » Options : `Tout le fichier (Recommandé)` ; `Certaines pages`. Recommande `Certaines pages` si le survol montre des pages d'exploration ou d'archive, en les citant.
@@ -41,5 +41,6 @@ Tu mesures, tu n'écris rien dans Figma et tu ne poses que les questions nécess
 {3 lignes : fondations, composants, écrans}
 ```
 
+Un motif décoratif massif (voir `controles.md`) : donne la part reliée avec et sans lui, dans la même ligne.
 La colonne « Un kit propre en aurait environ » est une estimation : écris-le sous le tableau, et appuie chaque chiffre sur les regroupements mesurés par seiri (grappes de nuances, valeurs hors échelle, doublons).
 Pas de tirets cadratins.

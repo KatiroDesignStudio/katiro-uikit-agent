@@ -16,7 +16,7 @@ Règle fixe du plugin. seiton la met en place en phase 1.
 | `Archives` | Ce qui a été remplacé |
 | `---` | Séparateur (page vide nommée de tirets), puis les pages d'écrans existantes, inchangées |
 
-`Couverture`, `Revue`, `Arborescence` et `Archives` sont exclues de tous les comptages.
+Sont exclues de tous les comptages : `Couverture`, `Revue`, `Arborescence`, `Archives`, les séparateurs et les couvertures existantes quel que soit leur nom.
 
 ## Classement atomique
 - **Atome** : n'utilise aucun autre composant du kit (bouton, champ, badge, icône). Seule règle mécanique.
