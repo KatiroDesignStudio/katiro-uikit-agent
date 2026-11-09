@@ -1,56 +1,76 @@
 # UI Kit : {Projet}
 
 Fichier Figma : {lien}
+Plan et siège : {plan}, siège {siège}
 Démarré le : {date} · Dernière session : {date}
 Phase en cours : 0 Périmètre
 Prochaine action : {action}
 
 ## Avancement
-| Phase | État |
-|---|---|
-| 0 Périmètre | à faire |
-| 1 Scan | à faire |
-| 2 Fondations | à faire |
-| 3 Atomes | à faire |
-| 4 Molécules | à faire |
-| 5 Organismes | à faire |
-| 6 Templates | à faire |
-| 7 Écrans | à faire |
-| 8 Clôture | à faire |
+États : à faire, en cours, faite, close avec reports, rien à faire.
 
-## Compteurs
-| Compteur | Avant | Maintenant |
+| Phase | État | Recette |
 |---|---|---|
-| Valeurs en dur | | |
+| 0 Périmètre | à faire | |
+| 1 Scan et structure | à faire | |
+| 2 Fondations | à faire | |
+| 3 Atomes | à faire | |
+| 4 Molécules | à faire | |
+| 5 Organismes | à faire | |
+| 6 Templates | à faire | |
+| 7 Écrans | à faire | |
+| 8 Clôture | à faire | |
+
+## Chiffres
+| | Avant | Maintenant |
+|---|---|---|
+| Couleurs uniques | | |
+| Tailles de texte | | |
+| Valeurs d'espacement | | |
+| Valeurs de rayon | | |
+| Familles et graisses de police | | |
+| Familles d'icônes | | |
+| Composants → component sets | | |
+| Kit : propriétés reliées | | |
+| Écrans : propriétés reliées | | |
+| Écrans : nœuds instances du kit | | |
 | Textes sans style | | |
-| Nuances proches non résolues | | |
-| Composants hors kit | | |
 | Doublons | | |
 | Copies détachées | | |
 | Contrastes en échec | | |
 | Noms hors nomenclature | | |
-| Questions ouvertes | | |
 
 ## Périmètre
 Règle d'identification : {règle}
-Écrans retenus ({n}) :
--
-Exclus ({n}) :
--
-Doublons tranchés :
--
+Écrans retenus ({n}) : voir `.uikit/perimetre.json`
+Exclus ({n}) : {nombre par motif}
+Doublons tranchés : {groupes et version retenue}
+Kit existant : {repris, laissé intact, aucun}
 
 ## Référentiel
-Règles fixes du plugin : nomenclature et structure du UI Kit (dossier `references/` du plugin).
+Règles fixes du plugin : nomenclature, structure, contrôles (dossier `references/` du plugin).
 
 ### Règles (R)
-- R0 Périmètre : seuls les écrans retenus servent au kit. Les autres ne sont jamais modifiés.
-- R1 Aucune couleur, typo, espacement, rayon, ombre ni grille hors variable ou style dans le kit.
+- R0 Périmètre : seuls les écrans retenus servent au kit et sont modifiés en phase 7. Les autres ne sont jamais modifiés.
+- R1 Aucune couleur, typo, espacement, rayon, bordure, opacité, ombre ni grille hors variable ou style dans le kit.
 
 ### Décisions (D)
 -
 
-## Questions ouvertes
+## Lots
+États : à faire, en cours, fait.
+
+| Lot | Familles | État |
+|---|---|---|
+
+## Questions
+États : ouverte, reportée, avec le client, tranchée.
+
+| Q | Phase | Question | Constats | État |
+|---|---|---|---|---|
+
+## Avec le client
+Questions à envoyer telles quelles :
 -
 
 ## Journal

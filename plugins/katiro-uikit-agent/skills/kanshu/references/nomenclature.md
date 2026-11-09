@@ -1,51 +1,52 @@
 # Nomenclature
 
-Logique BEM, traduite dans les outils natifs de Figma, pour qu'un développeur lise le kit comme du code.
+Logique BEM, traduite dans les outils natifs de Figma : un développeur lit `Button` · `variant=primary` · `size=md` comme `<Button variant="primary" size="md">` ou `.button--primary.button--md`.
 
-| BEM | Figma | Exemple |
-|---|---|---|
-| Block | Component set | `Button` |
-| Element | Sous-composant privé, noms de calques | `_Button/Icon`, calque `icon` |
-| Modifier | Propriétés | `variant=primary`, `size=md`, `state=hover` |
-
-Lecture développeur : `Button` · `variant=primary` · `size=md` donne `<Button variant="primary" size="md">` ou `.button--primary.button--md`.
+| BEM | Figma |
+|---|---|
+| Block | Component set : `Button` |
+| Element | Sous-composant privé (`_Button/Icon`) et noms de calques (`icon`) |
+| Modifier | Propriétés : `variant=primary`, `size=md`, `state=hover` |
 
 ## Composants
-- Nom en anglais, `PascalCase`, au singulier : `Button`, `TextField`, `ProductCard`, `Header`.
-- Pas de niveau atomique dans le nom : la page le donne (`01 Atomes`). `Button`, jamais `Atoms/Button`.
-- Sous-composant interne : préfixe `_` (`_Button/Icon`). Figma le cache du panneau Assets.
-- Description : une ligne, ce qu'est le composant. Pas de mode d'emploi.
+- En anglais, `PascalCase`, au singulier : `Button`, `TextField`, `ProductCard`, `Header`.
+- Pas de niveau atomique dans le nom : la page le donne.
+- Sous-composant interne : préfixe `_` (`_Button/Icon`), caché du panneau Assets.
+- Description : une ligne, ce qu'est le composant.
+- Le nom métier d'un composant est une déduction : question sur liste en début de phase.
 
 ## Propriétés
 | Type | Nom | Valeurs |
 |---|---|---|
-| Variante | `variant`, `size`, `state`, `breakpoint`… en `camelCase` | en minuscules, `kebab-case` : `primary`, `sm`, `md`, `lg`, `hover` |
-| Booléen | `show` + élément : `showIcon`, `showBadge` | `true` / `false` |
+| Variante | `variant`, `size`, `state`, `status`, `breakpoint`, en `camelCase` | minuscules, `kebab-case` |
+| Booléen | `selected`, `checked`, `showIcon`, `showBadge`… | `true` / `false` |
 | Texte | nom de l'élément : `label`, `helperText` | |
-| Échange d'instance | nom de l'élément : `icon`, `avatar` | |
+| Échange d'instance | `iconLeading`, `iconTrailing`, `avatar` | |
 
-États, dans cet ordre quand ils existent : `default`, `hover`, `pressed`, `focus`, `disabled`, `error`.
-Tailles : `xs`, `sm`, `md`, `lg`, `xl`.
+- `state` : interaction, dans cet ordre : `default`, `hover`, `pressed`, `focus`, `disabled`.
+- `status` : validation, séparée de `state` pour pouvoir combiner erreur et focus : `none`, `error`, `success`, `warning`.
+- `size` : `xs`, `sm`, `md`, `lg`, `xl`. La correspondance des tailles existantes est une question sur liste.
 
 ## Calques
-- En minuscules, `kebab-case`, nommés par leur rôle : `container`, `icon`, `label`, `helper-text`.
-- Aucun nom généré par Figma (`Frame 247`, `Rectangle 12`, `Group 3`).
+En minuscules, `kebab-case`, choisis dans ce vocabulaire : `container`, `content`, `icon`, `icon-leading`, `icon-trailing`, `label`, `text`, `title`, `description`, `helper-text`, `error-text`, `input`, `placeholder`, `image`, `avatar`, `badge`, `indicator`, `divider`, `action`, `actions`, `overlay`.
+Un rôle hors vocabulaire est un doute à remonter. Aucun nom généré par Figma (`Frame 247`, `Rectangle 12`).
 
 ## Variables
-| Collection | Rôle | Exemples |
+| Collection | Contenu | Exemples |
 |---|---|---|
-| `primitives` | Valeurs brutes, sans rôle | `color/blue/500`, `space/16`, `radius/8`, `font/size/16`, `font/weight/600` |
-| `semantic` | Rôles, alias vers les primitives, modes clair et sombre s'ils existent | `color/bg/default`, `color/bg/primary`, `color/text/muted`, `color/border/focus` |
-| `layout` | Grilles, un mode par point de rupture | `grid/columns`, `grid/gutter`, `grid/margin` |
+| `primitives` | Couleurs brutes, sans rôle | `color/blue/500`, `color/neutral/0` |
+| `semantic` | Rôles de couleur, alias vers les primitives, modes clair et sombre s'ils existent | `color/bg/default`, `color/bg/primary`, `color/text/muted`, `color/border/focus`, `color/icon/default` |
+| `dimensions` | Une seule couche, sans mode | `space/16`, `radius/8`, `border/1`, `opacity/50`, `font/family/body`, `font/size/16`, `font/line-height/24`, `font/weight/600`, `font/letter-spacing/0` |
+| `layout` | Grilles, une variable par point de rupture, sans mode | `grid/desktop/columns`, `grid/desktop/gutter`, `grid/desktop/margin` |
 
-Chemins en minuscules, séparés par `/`. Un développeur lit `color/bg/primary` comme `--color-bg-primary`.
-Les composants n'utilisent que des variables `semantic` (et `layout`), jamais `primitives` directement.
+- Chemins en minuscules, séparés par `/`. `color/bg/primary` se lit `--color-bg-primary`.
+- Les composants utilisent `semantic` pour les couleurs, jamais `primitives` directement, et `dimensions` pour le reste.
+- Les noms des primitives (teinte, cran) sont une question sur liste en phase 2.
 
 ## Styles
-- Texte : `text/{rôle}/{taille}` : `text/heading/xl`, `text/body/md`, `text/label/sm`. Branchés sur les variables de typo.
-- Effets : `shadow/sm`, `shadow/md`, `shadow/lg`. Couleur branchée sur une variable.
-- Grilles : `grid/{breakpoint}` : `grid/mobile`, `grid/desktop`. Branchés sur la collection `layout`.
+- Texte : `text/{rôle}/{taille}` (`text/heading/xl`, `text/body/md`, `text/label/sm`), branchés sur `dimensions`.
+- Effets : `shadow/sm`, `shadow/md`, `shadow/lg`, couleur branchée sur `semantic`.
+- Grilles : un style par point de rupture, `grid/mobile`, `grid/desktop`, branché sur `layout`. Les points de rupture sont une question de phase 2.
 
 ## Icônes
-- Un composant par icône : `icon/{nom-kebab}` (`icon/arrow-right`).
-- Taille et famille : décidées en phase 2 (question), puis règle du référentiel.
+Exception écrite à la règle `PascalCase`, comme dans les bibliothèques d'icônes : un composant par icône, `icon/{nom-kebab}` (`icon/arrow-right`). Cadre carré à la taille décidée en phase 2, couleur branchée sur `color/icon/*`, taille réglée sur l'instance.
