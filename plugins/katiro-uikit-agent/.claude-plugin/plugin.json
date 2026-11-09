@@ -1,0 +1,8 @@
+{
+  "name": "katiro-uikit-agent",
+  "version": "0.1.0",
+  "description": "Remet au propre le UI Kit d'un fichier Figma en logique atomique : un Lead Design System (kanshu) qui pose une question pour chaque déduction, un relevé en lecture seule (seiri) et un UI Product Designer (seiton) qui construit",
+  "author": { "name": "Katiro Studio" },
+  "license": "MIT",
+  "keywords": ["figma", "ui-kit", "design-system", "atomic-design", "design-tokens"]
+}

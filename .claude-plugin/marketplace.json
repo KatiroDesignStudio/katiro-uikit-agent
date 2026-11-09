@@ -1,0 +1,12 @@
+{
+  "name": "katiro-uikit",
+  "description": "Plugin Claude Code de Katiro Studio pour remettre au propre le UI Kit d'un fichier Figma",
+  "owner": { "name": "Katiro Studio" },
+  "plugins": [
+    {
+      "name": "katiro-uikit-agent",
+      "source": "./plugins/katiro-uikit-agent",
+      "description": "Remet au propre le UI Kit d'un fichier Figma en logique atomique : un Lead Design System (kanshu) qui pose une question pour chaque déduction, un relevé en lecture seule (seiri) et un UI Product Designer (seiton) qui construit"
+    }
+  ]
+}
