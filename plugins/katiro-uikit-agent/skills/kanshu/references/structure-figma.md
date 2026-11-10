@@ -19,7 +19,7 @@ Règle fixe du plugin. seiton la met en place en phase 1.
 Sont exclues de tous les comptages : `Couverture`, `Revue`, `Arborescence`, `Archives`, les séparateurs et les couvertures existantes quel que soit leur nom.
 
 ## Classement atomique
-- **Atome** : n'utilise aucun autre composant du kit (bouton, champ, badge, icône). Seule règle mécanique.
+- **Atome** : n'utilise aucun autre composant du kit (bouton, champ, badge). Seule règle mécanique. Les icônes font exception : elles sont rangées dans `00 Fondations`.
 - **Molécule** : assemble des atomes pour une seule fonction (champ avec label et aide, ligne de liste, carte simple).
 - **Organisme** : région autonome d'une page (header, footer, formulaire complet, liste de cartes).
 - **Template** : page entière, sans contenu réel, posée sur la grille.
@@ -31,22 +31,23 @@ Hors atomes, le niveau est un jugement : il est proposé dans la question sur li
 - Une **section Figma** par famille (`Button`, `TextField`…), dans l'ordre alphabétique. Les sections ne s'agrandissent pas seules : seiton les redimensionne.
 - Dans chaque section : le component set, et au-dessus son nom et sa ligne de description.
 - Espacements réguliers entre sections. Rien ne se chevauche, rien ne traîne hors section.
-- Les cadres de présentation utilisent les variables et styles du kit dès qu'ils existent.
+- Les cadres de présentation utilisent les variables et styles du kit dès qu'ils existent. Ceux créés avant la phase 2 y passent dans le dernier lot de la phase 2, avant la recette : titres de page sur le style de titre le plus proche de 40, titre de couverture sur le plus grand style de titre du kit, texte courant sur le style de corps de 16, étiquettes et tableaux sur le style d'étiquette ; couleurs sur les rôles de texte (défaut, atténué, accent pour les liens), de fond (défaut, surface) et de contour (discret). Un style ou un rôle absent du kit est un doute ; un changement de taille de plus de 4 px est listé dans le rapport du lot, puis montré à la recette.
+- La date « Mis à jour le » d'un cadre titre est mise à jour en fin de phase, pour les pages écrites pendant la phase.
 
 ## 00 Fondations, sections dans cet ordre
 Couleurs (primitives par teinte, puis rôles, une colonne par mode), Typographie, Espacements, Rayons, Bordures, Opacités, Ombres, Grilles (un cadre par point de rupture), Icônes.
-Chaque échantillon est branché sur sa variable ou son style. Aucune valeur écrite à la main.
+Chaque échantillon est branché sur sa variable ou son style. Aucune valeur écrite à la main. Sous l'échantillon : son nom, sa valeur, et le nom de marque s'il existe (pas de description technique). Ordre : celui des décisions.
 
 ## Revue
-- En tête : chiffres avant → après (`controles.md`, Compteurs), date du dernier passage.
+- En tête : chiffres « avant » jusqu'à la clôture, puis « avant → après » (`controles.md`, Compteurs), date du dernier passage.
 - Trois colonnes : **Fait** (créé), **Ajusté** (corrigé, fusionné, relié), **À décider** (questions reportées ou avec le client).
-- Une carte par famille (« Button : 3 doublons fusionnés, 2 états ajoutés »), avec un lien vers la section.
+- Une carte par famille (« Button : 3 doublons fusionnés, 2 états ajoutés »), sans numéro de lot, avec un lien vers la section (la première dans l'ordre de la page si la carte en couvre plusieurs). Le titre peut passer à la ligne.
 - Pas de paragraphe.
 
 ## Arborescence
 - En tête : « {n} écrans de référence · {p} parcours · relevé du {date} ». Les écrans exclus sont seulement comptés.
 - Un arbre en auto-layout : un nœud par parcours, puis ses écrans. Traits simples entre les nœuds, recalculés à chaque passage (les connecteurs n'existent pas en Figma Design).
-- Chaque écran : nom, lien vers l'écran d'origine, et une vignette (copie réduite et verrouillée) tant qu'il y a 60 écrans au plus. Au-delà, pas de vignette.
+- Chaque écran : nom, lien vers l'écran d'origine, et une vignette tant qu'il y a 60 écrans au plus (au-delà, pas de vignette). Vignette : copie réduite, recadrée à 1 200 px de haut à l'échelle d'origine, verrouillée, liens de prototype retirés.
 
 ## Archives
 - Chaque élément porte une étiquette : « Remplacé par {nom} · D{n} · {date} ».

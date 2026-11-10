@@ -42,10 +42,11 @@ Prochaine action : {action}
 
 ## Périmètre
 Règle d'identification : {règle}
-Écrans retenus ({n}) : voir `.uikit/perimetre.json`
+Écrans retenus ({n}) : voir `.uikit/perimetre-valide.json`
 Exclus ({n}) : {nombre par motif}
 Doublons tranchés : {groupes et version retenue}
 Kit existant : {repris, laissé intact, aucun}
+Couverture : {gardée, remplacée, aucune}
 
 ## Référentiel
 Règles fixes du plugin : nomenclature, structure, contrôles (dossier `references/` du plugin).

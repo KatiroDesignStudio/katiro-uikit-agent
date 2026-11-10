@@ -13,7 +13,7 @@ Des constats du même type dans la même phase forment une **question sur liste*
 Dans le message, en 3 lignes au plus :
 - **Constat** : ce qui a été vu, en langage simple.
 - **Preuves** : où (liens vers les nœuds), combien, quelles valeurs.
-- **Impact** : ce que chaque choix change dans le kit et dans les écrans.
+- **Impact** : ce que chaque choix change dans le kit et dans les écrans. Une valeur qui change, même légèrement (une teinte rapprochée d'une primitive), est dite avec son écart.
 
 ## La question (AskUserQuestion, une seule par appel)
 - `question` : une phrase qui se suffit à elle-même, précédée de la progression (`Q3/8`).
@@ -28,7 +28,7 @@ Dans le message, en 3 lignes au plus :
 « {Phase} : je valide ? », avec un lien vers chaque section touchée et les chiffres de la phase. Options : `Je valide (Recommandé)` ; `À reprendre`. Avec « À reprendre », demande quoi, en une question ouverte.
 
 ## Après la réponse
-1. Écris tout de suite dans `uikit.md` une règle `R{n}` (s'applique partout et pour la suite) ou une décision `D{n}` (s'applique à des éléments précis), avec le numéro de la question et la date.
+1. Écris tout de suite dans `uikit.md`, avec les noms complets (`color/bg/default`), une règle `R{n}` (s'applique partout et pour la suite) ou une décision `D{n}` (s'applique à des éléments précis), avec le numéro de la question et la date.
 2. Ajoute une ligne au journal.
 3. Mets à jour l'état de la question.
 

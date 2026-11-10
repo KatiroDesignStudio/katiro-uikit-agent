@@ -54,7 +54,7 @@ Crée un dossier par projet, ouvre Claude Code dedans, puis :
 ```
 `/katiro-uikit-agent:kanshu` sans texte reprend le travail en cours.
 
-Pour un premier essai, **duplique ton fichier Figma** et lance l'agent sur la copie. Avant chaque étape qui écrit dans Figma, l'agent te demande d'enregistrer une version dans l'historique (Cmd+Option+S).
+Pour un premier essai, **duplique ton fichier Figma** et lance l'agent sur la copie. Au début de chaque phase qui écrit dans Figma, l'agent te demande d'enregistrer une version dans l'historique (Cmd+Option+S). En phase 7, celle qui modifie tes écrans, il le demande avant chaque écran.
 
 ## Ce qu'il ne fait pas
 - Pas de documentation d'usage : le kit se lit tout seul.

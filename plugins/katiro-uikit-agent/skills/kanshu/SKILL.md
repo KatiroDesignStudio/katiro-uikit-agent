@@ -16,7 +16,7 @@ Tu ne touches jamais à Figma toi-même, sauf `get_screenshot` sur une section p
 
 | Catégorie | Définition | Ce que tu fais |
 |---|---|---|
-| **Exécution** | Appliquer une décision du référentiel de `uikit.md`, ou une règle fixe du plugin (liste dans `references/controles.md`, « Ce qui n'est pas une question ») | Tu fais faire, sans question. Tu notes au journal. |
+| **Exécution** | Appliquer une décision du référentiel de `uikit.md`, ou une règle fixe du plugin (`references/nomenclature.md`, `references/structure-figma.md` et la liste « Ce qui n'est pas une question » de `references/controles.md`) | Tu fais faire, sans question. Tu notes au journal. |
 | **Déduction** | Tout le reste | **Question. Toujours.** |
 
 Dans le doute, c'est une déduction. Juger qu'un lot est réussi en est une aussi : chaque phase se termine par une **recette** de l'utilisateur.
@@ -26,14 +26,14 @@ Dans le doute, c'est une déduction. Juger qu'un lot est réussi en est une auss
 - Modifier un composant ou un écran existant avant la phase 7. Le kit est **reconstruit à côté**, à partir de copies.
 - Toucher un écran hors périmètre, même en phase 7.
 - Faire tourner seiri et seiton en même temps.
-- Lancer une écriture de seiton sans point de version (plus bas).
+- Lancer une phase d'écriture sans point de version (plus bas).
 - Écrire une documentation d'usage. Une ligne de description par composant, au plus.
 
 ## Point de version
-L'agent ne peut pas enregistrer de version dans Figma. Avant chaque lot de seiton (un seul point par lot, qui couvre ses relances et corrections), demande : « Enregistre une version dans Figma (Cmd+Option+S, ou Fichier > Enregistrer dans l'historique des versions), nommée « uikit : avant {lot} ». C'est fait ? » Options : `C'est fait` ; `Continuer sans`. Note la réponse au journal.
+L'agent ne peut pas enregistrer de version dans Figma. Un seul point par phase, demandé avant la première écriture de la phase ; il couvre tous ses lots, relances, corrections et la mise à jour de la Revue. Exception : en phase 7, un point par écran (on y modifie les écrans). Demande : « Enregistre une version dans Figma (Cmd+Option+S, ou Fichier > Enregistrer dans l'historique des versions), nommée « uikit : avant phase {n} » (en phase 7 : « uikit : avant phase 7, {écran} »). C'est fait ? » Options : `C'est fait` ; `Continuer sans`. Note la réponse au journal.
 
 ## Démarrage (à chaque invocation, reprise comprise)
-1. Le serveur MCP Figma doit être connecté (outils `use_figma`, `create_session`). Sinon, explique comment le connecter (`/mcp`) et arrête-toi. Dès que le lien est connu, appelle `create_session` une fois par session de travail.
+1. Le serveur MCP Figma doit être connecté (outils `use_figma`, `create_session`). Sinon, explique comment le connecter (`/mcp`) et arrête-toi. Dès que le lien est connu, appelle `create_session` une fois par session de travail. Le nom du fichier se lit dans le lien, jamais dans Figma (l'API renvoie « Document »).
 2. Lis tous les fichiers de `${CLAUDE_SKILL_DIR}/references/`.
 3. `uikit.md` absent du dossier courant : prends le lien Figma dans la demande, sinon demande-le. Puis la question de prérequis : « Quel est ton plan Figma et ton siège ? » Options : `Professional ou plus, siège Full ou Dev (Recommandé)` ; `Starter (gratuit)` ; `Siège View ou Collab`. Starter, View ou Collab : explique que l'outil Figma y est limité à 6 appels par mois, et que le plan Starter est en plus limité à 3 pages et à 1 mode de variables, puis arrête-toi sans rien créer. Sinon : copie `${CLAUDE_SKILL_DIR}/templates/uikit.md` à la racine, crée `.uikit/`, et remplis l'en-tête (lien, plan et siège, dates).
 4. Lis `uikit.md` : phase, prochaine action, questions ouvertes et reportées. Demande vide : reprends à la prochaine action.
@@ -55,8 +55,11 @@ L'agent ne peut pas enregistrer de version dans Figma. Avant chaque lot de seito
 
 Une phase sans constat ni question est marquée « rien à faire », sans appel à seiton.
 
+### Élément introuvable dans le fichier
+Une décision demande un élément que le fichier n'a pas (une icône de la famille choisie, par exemple) : seiton ne dessine jamais de mémoire. Question : l'utilisateur colle l'élément dans la page du kit, ou donne le lien officiel. Avec un lien d'icône, récupère le SVG officiel dans le paquet npm de la famille, version fixée (par exemple `https://unpkg.com/lucide-static@{version}/icons/{nom}.svg`), dans un dossier de travail vide ; lis-le avant de le transmettre à seiton, avec sa licence.
+
 ### Phase 0 : Périmètre
-1. **seiri, mode survol** : pages, nombre de cadres par page, noms, sections, préfixes récurrents, page UI Kit existante.
+1. **seiri, mode survol** : pages, nombre de cadres par page, noms, sections, préfixes récurrents, page UI Kit existante. S'il rend « aucune page de contenu », dis-le (mauvais fichier, ou copie vide) et demande le bon lien.
 2. Question, avec les preuves du survol (« 7 pages, dont "Explo" et "V2" ») : « Ton fichier ne contient que des écrans définitifs ? » Options : `Que du définitif` ; `Un mélange`. Recommande selon le survol.
 3. Mélange : « Comment je reconnais les écrans définitifs ? » Options : `Une page dédiée` ; `Un préfixe dans le nom` ; `Des sections` ; `Propose-moi`. Recommande selon le survol.
 4. **seiri, mode périmètre** : écrans retenus, exclus, doublons, structure, kit existant.
@@ -69,31 +72,31 @@ Une phase sans constat ni question est marquée « rien à faire », sans appel 
 ### Phase 1 : Scan et structure
 1. **seiri, mode scan**, sur le périmètre validé, en nouveau scan (un scan précédent, celui de shindan par exemple, est remplacé). S'il rend « incomplet », relance-le en reprise : il repart du curseur.
 2. Reporte les compteurs « avant » dans `uikit.md`. Présente en 5 lignes les chiffres de consolidation (« 63 couleurs, 47 composants, 3 familles d'icônes ») et le nombre de questions attendu par phase.
-3. Point de version, puis **seiton**, lot `P1-01` : pages du kit, séparateur, Arborescence (depuis `perimetre-valide.json`), Revue et Couverture avec les compteurs « avant ».
+3. Point de version de la phase 1, puis **seiton**, lot `P1-01` : pages du kit, séparateur, Arborescence (depuis `perimetre-valide.json`), Revue et Couverture avec les compteurs « avant ».
 4. Recette de la structure (étape 6 de la boucle).
 
 ### Boucle de phase (phases 2 à 7)
 1. **seiri, mode scan delta** sur ce que touche la phase : les constats tiennent compte des décisions déjà prises.
 2. Construis les questions de la phase **au niveau de la règle** (`references/questions.md`, et `references/controles.md` pour les questions de cadrage de chaque phase), dans l'ordre où elles débloquent le plus. Inscris-les toutes dans `uikit.md` à l'état « ouverte », puis annonce le total : « Fondations : 8 questions ».
 3. Pose-les une par une (Q3/8). Chaque réponse devient une règle R ou une décision D dans `uikit.md`, avec une ligne au journal. Une question reportée bloque seulement les éléments qui en dépendent : mets-les de côté et liste-les.
-4. Découpe le travail en lots de 10 familles au plus (`P{phase}-{nn}`), inscrits dans la section Lots de `uikit.md`. Pour chaque lot :
-   1. point de version, puis **seiton** construit le lot ;
-   2. ses doutes deviennent des questions ; les réponses données, relance seiton sur ces seuls éléments ;
-   3. **seiri, mode contrôle**, sur les nœuds du lot (`.uikit/ids.json`), puis `get_screenshot` par section touchée ;
+4. Découpe le travail en lots de 10 familles au plus (`P{phase}-{nn}`), inscrits dans la section Lots de `uikit.md`. En phase 2, le dernier lot, avant la recette, passe sur le kit les cadres de présentation créés avant les fondations (`structure-figma.md`). Pour chaque lot :
+   1. **seiton** construit le lot (point de version demandé avant le premier lot de la phase) ;
+   2. ses doutes deviennent des questions, regroupées en une question sur liste quand ils sont de même nature ; les réponses données, relance seiton sur ces seuls éléments ;
+   3. contrôle : **seiri, mode contrôle**, pour un lot qui crée ou modifie des variables, des styles, des composants ou des écrans ; pour un lot de présentation seule, ta vérification par `get_screenshot` suffit. Dans les deux cas, `get_screenshot` par section touchée ;
    4. écarts : renvoie à seiton la liste (nœud, règle, attendu). Deux allers-retours au plus, puis question ;
    5. passe le lot à « fait » dans `uikit.md`.
 5. **Recette** : « {Phase} : je valide ? », avec les liens vers les sections Figma. Options : `Je valide (Recommandé)` ; `À reprendre`. Ce qui est à reprendre devient des décisions, puis un lot de correction.
-6. Point de version, puis un appel **seiton** dédié : mise à jour de la Revue et de la Couverture.
+6. Un appel **seiton** dédié (couvert par le point de version de la phase) : mise à jour de la Revue, de la Couverture et des dates des cadres titres des pages écrites pendant la phase.
 7. Mets à jour `uikit.md` : phase « faite », ou « close avec reports », compteurs, prochaine action. Propose : « Tout est noté dans uikit.md. Tu peux faire /clear puis relancer /katiro-uikit-agent:kanshu pour repartir léger. »
 
 ### Phase 7 : Écrans
 La question d'entrée précède la boucle : « Je remplace, dans les écrans retenus, les anciens composants et copies par ceux du kit, et je relie leurs valeurs ? » Options : `Oui, tous les écrans (Recommandé)` ; `Parcours par parcours` ; `Non, le kit suffit` (description : les écrans livrés pointent encore vers les anciens composants).
-Lots par écran. En mode parcours, chaque parcours de `perimetre-valide.json` est un groupe de lots avec sa propre recette. Les anciens composants principaux qui n'ont plus d'instance dans le périmètre partent dans `Archives`. Les écrans hors périmètre gardent leurs instances, toujours liées.
+Lots par écran, avec un point de version par écran ; celui du dernier écran couvre aussi l'archivage des anciens composants et la mise à jour de la Revue. En mode parcours, chaque parcours de `perimetre-valide.json` est un groupe de lots avec sa propre recette. Les anciens composants principaux qui n'ont plus d'instance dans le périmètre partent dans `Archives`. Les écrans hors périmètre gardent leurs instances, toujours liées.
 
 ### Phase 8 : Clôture
 1. **seiri, mode contrôle complet** : compteurs « après ».
 2. Question : « La page Revue montre le chantier. Avant de livrer, je la… » Options : `Garde en tête (Recommandé)` ; `Range après le séparateur` ; `Range dans Archives`.
-3. Point de version, puis seiton finalise la Couverture et la Revue.
+3. Point de version de la phase 8, puis seiton finalise la Couverture et la Revue.
 4. Bilan à l'utilisateur : avant/après, questions reportées, questions « avec le client », ce qui reste au designer.
 
 ## Fin de session
