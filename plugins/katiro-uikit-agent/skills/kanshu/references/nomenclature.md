@@ -13,7 +13,7 @@ Logique BEM, traduite dans les outils natifs de Figma : un développeur lit `But
 - Pas de niveau atomique dans le nom : la page le donne.
 - Sous-composant interne : préfixe `_` (`_Button/Icon`), caché du panneau Assets.
 - Description : une ligne, ce qu'est le composant.
-- Le nom métier d'un composant est une déduction : question sur liste en début de phase.
+- Le nom métier d'un composant est une déduction : point du récapitulatif de la phase.
 
 ## Propriétés
 | Type | Nom | Valeurs |
@@ -25,12 +25,13 @@ Logique BEM, traduite dans les outils natifs de Figma : un développeur lit `But
 
 - `state` : interaction, dans cet ordre : `default`, `hover`, `pressed`, `focus`, `disabled`.
 - `status` : validation, séparée de `state` pour pouvoir combiner erreur et focus : `none`, `error`, `success`, `warning`.
-- `size` : `xs`, `sm`, `md`, `lg`, `xl`. La correspondance des tailles existantes est une question sur liste.
+- `size` : `xs`, `sm`, `md`, `lg`, `xl`. La correspondance des tailles existantes est un point du récapitulatif.
+- Titre bicolore : propriétés texte `title` et `titleAccent`, booléen `showTitleAccent`, variante `accentPosition` (`end`, `start`).
 
 ## Calques
-En minuscules, `kebab-case`, choisis dans ce vocabulaire : `container`, `content`, `icon`, `icon-leading`, `icon-trailing`, `label`, `text`, `title`, `description`, `helper-text`, `error-text`, `input`, `placeholder`, `image`, `avatar`, `badge`, `indicator`, `divider`, `action`, `actions`, `overlay`.
-Un rôle hors vocabulaire est un doute à remonter. Aucun nom généré par Figma (`Frame 247`, `Rectangle 12`).
-Pages de présentation (`Couverture`, `Revue`, `Arborescence`, `00 Fondations`) : les calques d'échantillon portent le nom du jeton montré (`color/violet/500`, `shadow/sm`) ; les cadres s'appellent `titre`, `section/{nom}`, `colonne/{nom}`, `carte/{nom}`, `parcours/{nom}`, `ecran/{nom}`. Dans `01 Atomes` à `04 Templates`, une section de famille porte le nom du composant (`Button`).
+En minuscules, `kebab-case`, choisis dans ce vocabulaire : `container`, `content`, `icon`, `icon-leading`, `icon-trailing`, `label`, `text`, `title`, `description`, `helper-text`, `error-text`, `input`, `placeholder`, `image`, `avatar`, `badge`, `indicator`, `divider`, `action`, `actions`, `overlay`, `tag`, `tag-group`, `text-accent`, `form`, `column`, `logo`, `decor`, `filter-bar`, `check-list`, `screenshot`.
+Un rôle hors vocabulaire est un doute pendant la construction (seiton), un écart au contrôle (seiri). Aucun nom généré par Figma (`Frame 247`, `Rectangle 12`).
+Pages de présentation (`Couverture`, `Revue`, `Arborescence`, `00 Fondations`) : les calques d'échantillon portent le nom du jeton montré (`color/violet/500`, `shadow/sm`) ; les cadres s'appellent `titre`, `section/{nom}`, `colonne/{nom}`, `carte/{nom}`, `parcours/{nom}`, `ecran/{nom}`. Dans `01 Atomes` à `03 Organismes`, une section de famille porte le nom du composant (`Button`).
 
 ## Variables
 | Collection | Contenu | Exemples |
@@ -43,14 +44,15 @@ Pages de présentation (`Couverture`, `Revue`, `Arborescence`, `00 Fondations`) 
 - Chemins en minuscules, séparés par `/`. `color/bg/primary` se lit `--color-bg-primary`. Dans une décision, toujours le nom complet (`color/bg/default`, jamais `bg/default`).
 - Valeur décimale dans un nom : le point devient un tiret (`font/line-height/70-2`). Couleur avec alpha : suffixe `-a{pourcentage}` (`color/violet/800-a24`).
 - Collection à mode unique : le mode s'appelle `default`. `grid/{bp}/columns` a une portée masquée ; gutter et margin la portée d'espacement.
-- Cran de couleur créé par une règle et hors de l'espace sRGB : chroma réduite, teinte gardée.
+- Cran de couleur créé par une règle et hors de l'espace sRGB : chroma réduite, teinte gardée. Cran au-delà du dernier de la rampe (900) : `950`, puis `975`.
+- Rôle d'état : `{rôle}-hover`, `{rôle}-pressed` (`color/bg/action-hover`). Tout autre nom créé par seiton hors de ces règles est un doute.
 - Arrondi à une variable, seulement quand une décision d'échelle l'a fixé (ou pour un cadre de présentation) : la plus proche ; à égale distance, la plus grande.
 - Les composants utilisent `semantic` pour les couleurs, jamais `primitives` directement, et `dimensions` pour le reste.
-- Les noms des primitives (teinte, cran) sont une question sur liste en phase 2.
+- Les noms des primitives (teinte, cran) sont un point du récapitulatif de la phase 2.
 
 ## Styles
 - Texte : `text/{rôle}/{taille}` (`text/heading/xl`, `text/body/md`, `text/label/sm`), branchés sur `dimensions`.
-- Effets : `shadow/sm`, `shadow/md`, `shadow/lg`, `ring/focus`. Une couleur d'effet reliée à une variable opaque perd son alpha. Selon la question de phase 2 : couleur reliée à un rôle `semantic` (`color/border/focus` pour `ring/focus`, `color/shadow/{taille}` pour les ombres) qui pointe vers une primitive avec alpha (`color/violet/800-a24`), ou gardée dans le style.
+- Effets : `shadow/sm`, `shadow/md`, `shadow/lg`, `ring/focus`. Une couleur d'effet reliée à une variable opaque perd son alpha : elle se relie à un rôle `semantic` (`color/border/focus` pour `ring/focus`, `color/shadow/{taille}` pour les ombres) qui pointe vers une primitive avec alpha (`color/violet/800-a24`). Flou d'arrière-plan : `blur/{nom}`.
 - Grilles : un style par point de rupture, `grid/mobile`, `grid/desktop`, branché sur `layout`. Les points de rupture sont une question de phase 2.
 
 ## Icônes

@@ -1,7 +1,7 @@
 {
   "name": "katiro-uikit-agent",
-  "version": "0.3.0",
-  "description": "Remet au propre le UI Kit d'un fichier Figma en logique atomique : diagnostic en lecture seule (shindan), Lead Design System qui pose une question pour chaque déduction (kanshu), relevé en lecture seule (seiri) et UI Product Designer qui construit (seiton)",
+  "version": "0.4.0",
+  "description": "Remet au propre le UI Kit d'un fichier Figma en logique atomique : diagnostic en lecture seule (shindan), Lead Design System qui fait valider chaque déduction, phase par phase (kanshu), relevé en lecture seule (seiri) et UI Product Designer qui construit (seiton)",
   "author": {
     "name": "Katiro Studio"
   },

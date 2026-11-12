@@ -17,9 +17,8 @@ Prochaine action : {action}
 | 3 Atomes | à faire | |
 | 4 Molécules | à faire | |
 | 5 Organismes | à faire | |
-| 6 Templates | à faire | |
-| 7 Écrans | à faire | |
-| 8 Clôture | à faire | |
+| 6 Écrans | à faire | |
+| 7 Clôture | à faire | |
 
 ## Chiffres
 | | Avant | Maintenant |
@@ -30,7 +29,7 @@ Prochaine action : {action}
 | Valeurs de rayon | | |
 | Familles et graisses de police | | |
 | Familles d'icônes | | |
-| Composants → component sets | | |
+| Composants (variantes) | | |
 | Kit : propriétés reliées | | |
 | Écrans : propriétés reliées | | |
 | Écrans : nœuds instances du kit | | |
@@ -47,12 +46,13 @@ Exclus ({n}) : {nombre par motif}
 Doublons tranchés : {groupes et version retenue}
 Kit existant : {repris, laissé intact, aucun}
 Couverture : {gardée, remplacée, aucune}
+Écrans branchés (phase 6) : {liste} · reportés : {liste}
 
 ## Référentiel
 Règles fixes du plugin : nomenclature, structure, contrôles (dossier `references/` du plugin).
 
 ### Règles (R)
-- R0 Périmètre : seuls les écrans retenus servent au kit et sont modifiés en phase 7. Les autres ne sont jamais modifiés.
+- R0 Périmètre : seuls les écrans retenus servent au kit et sont modifiés en phase 6. Les autres ne sont jamais modifiés.
 - R1 Aucune couleur, typo, espacement, rayon, bordure, opacité, ombre ni grille hors variable ou style dans le kit.
 
 ### Décisions (D)

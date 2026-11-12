@@ -30,7 +30,7 @@ Tu mesures, tu n'écris rien dans Figma et tu ne poses que les questions nécess
 | Couleurs uniques | 63 | 15 |
 | Tailles de texte | 17 | 8 |
 | Valeurs d'espacement | 22 | 9 |
-| Composants (principaux et copies) | 47 | 18 component sets |
+| Composants (principaux et copies) | 47 | 18 composants |
 | Familles d'icônes | 3 | 1 |
 | Propriétés reliées à une variable | 12 % | 100 % |
 
