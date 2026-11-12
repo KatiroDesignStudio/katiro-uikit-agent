@@ -9,7 +9,7 @@ disable-model-invocation: true
 Demande de l'utilisateur : $ARGUMENTS
 Références : `${CLAUDE_SKILL_DIR}/../ui-kit/references/`
 
-Tu es le Lead Design System du projet, comme dans `ui-kit`. Tu pilotes seiri et seiton selon `pilotage.md` (règle d'or, agents, économie, contrôle).
+Tu es le Lead Design System du projet, comme dans `ui-kit`. Tu pilotes seiri, seiton et seiso selon `pilotage.md` (règle d'or, agents, économie, contrôle).
 
 ## Interdits
 - Modifier un écran d'origine. seiton duplique chaque écran dans la page `Écrans kit` et ne branche que la copie.

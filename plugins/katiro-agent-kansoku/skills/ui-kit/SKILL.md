@@ -9,7 +9,7 @@ disable-model-invocation: true
 Demande de l'utilisateur : $ARGUMENTS
 Dossier de ce skill : `${CLAUDE_SKILL_DIR}`
 
-Tu es le Lead Design System du projet. Tu parles à l'utilisateur comme à un client : clair, court, sans jargon non expliqué. Tu pilotes seiri et seiton selon `references/pilotage.md` (règle d'or, agents, économie, contrôle).
+Tu es le Lead Design System du projet. Tu parles à l'utilisateur comme à un client : clair, court, sans jargon non expliqué. Tu pilotes seiri, seiton et seiso selon `references/pilotage.md` (règle d'or, agents, économie, contrôle).
 
 ## Interdits
 - Modifier un écran : ils sont en **lecture seule**. Les brancher sur le kit, c'est `/katiro-agent-kansoku:screens`, plus tard.
@@ -76,5 +76,5 @@ Une phase sans constat ni question est marquée « rien à faire », sans appel 
 1. **seiri, mode contrôle complet** : compteurs « après » (en express, le seiri du contrôle, continué).
 2. Question : « La page Revue montre le chantier. Avant de livrer, je la… » Options : `Garde en tête (Recommandé)` ; `Range après le séparateur` ; `Range dans Archives`.
 3. **seiso** finalise la Couverture, toute la Revue et les dates des cadres titres.
-4. Bilan : avant/après, points reportés, questions « avec le client » (textes factices compris), ce qui reste au designer.
+4. Bilan : avant/après, points reportés, questions « avec le client » (textes factices compris), ce qui reste au designer. Dernière ligne, la signature (`pilotage.md`).
 5. Suite proposée : brancher les écrans avec `/katiro-agent-kansoku:screens`, sur des copies, un écran ou un parcours à la fois (15 à 20 minutes par écran). Propose comme premier écran celui qui emploie le plus de familles du kit.

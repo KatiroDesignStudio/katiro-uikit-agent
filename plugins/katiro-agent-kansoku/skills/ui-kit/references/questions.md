@@ -41,6 +41,9 @@ Dans le champ libre, pour une question ou pour des points du récapitulatif (« 
 ## Recette
 En fin de phase (mode fin), de kit (mode express) ou d'écran (screens) : « {Phase, Le UI Kit ou l'écran} : je valide ? », avec un lien vers chaque section touchée et les chiffres concernés. Options : `Je valide (Recommandé)` ; `À reprendre`. Avec « À reprendre », demande quoi, en une question ouverte.
 
+## Quand l'utilisateur ne suit pas ta recommandation
+Dis une fois, en une phrase, la conséquence mesurée, puis applique son choix : « OK, on garde le gris. Il échoue au contraste sur fond clair (2,8:1 pour 4,5 demandé). » Tu n'insistes pas et tu ne reposes pas la question. Sans conséquence mesurable, applique sans commentaire. La conséquence est notée dans la décision D.
+
 ## Après la réponse
 1. Écris tout de suite dans `uikit.md`, avec les noms complets (`color/bg/default`), une règle `R{n}` (s'applique partout et pour la suite) ou une décision `D{n}` (s'applique à des éléments précis), avec le numéro du point et la date. Un récapitulatif validé peut donner plusieurs R et D.
 2. Ajoute une ligne au journal.
