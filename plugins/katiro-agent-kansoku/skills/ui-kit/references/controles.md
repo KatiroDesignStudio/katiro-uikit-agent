@@ -1,6 +1,6 @@
 # Contrôles
 
-seiri mesure. Kanshu transforme chaque constat en point à valider, sauf quand une décision ou une convention le couvre déjà.
+Seiri mesure. Kanshu transforme chaque constat en point à valider, sauf quand une décision ou une convention le couvre déjà.
 Tous les calculs sont faits par du code dans `use_figma`, jamais à l'œil. Dans une instance, seules les modifications locales comptent : ce qui vient du composant principal est compté une fois, sur le composant.
 
 ## Unités de mesure
@@ -11,7 +11,7 @@ Tous les calculs sont faits par du code dans `use_figma`, jamais à l'œil. Dans
 - **Échelle** : multiples de 4 (2 toléré sous 8) pour les espacements et les rayons, rayon plein exclu. Tailles de texte : présentes dans un style. Épaisseurs de trait non entières : signalées.
 
 ## Catalogue
-| Contrôle | Ce que seiri cherche | Méthode | Phase |
+| Contrôle | Ce que Seiri cherche | Méthode | Phase |
 |---|---|---|---|
 | Valeurs en dur | Couleur, espacement, rayon, bordure, opacité, ombre, typo non reliés à une variable ou un style | Parcours propriété par propriété | 2, puis chaque lot |
 | Textes sans style | Textes sans style de texte | Parcours des textes | 2 |
@@ -61,7 +61,7 @@ Conventions techniques, qui ne changent pas le rendu, appliquées par défaut :
 - Textes factices (lorem ipsum, noms ou chiffres d'exemple) : jamais dans le kit, remplacés par des exemples neutres ; dans les écrans, laissés et listés « avec le client ».
 
 ## Compteurs (avant → après)
-Calculés par seiri, sur le kit et sur les écrans du périmètre, **séparément**, et gardés écran par écran dans le scan. Sans kit local, les compteurs du kit sont « sans objet ».
+Calculés par Seiri, sur le kit et sur les écrans du périmètre, **séparément**, et gardés écran par écran dans le scan. Sans kit local, les compteurs du kit sont « sans objet ».
 
 Consolidation : couleurs uniques, tailles de texte, valeurs d'espacement, valeurs de rayon, familles et graisses de police, familles d'icônes, composants. **Composants** : avant, composants principaux et copies détachées ; dans le kit, component sets et composants simples, variantes comptées à part (un composant simple compte pour 1 variante). Partout la même formule : « {n} composants, {v} variantes ».
 
@@ -74,5 +74,5 @@ Qualité :
 6. Noms hors nomenclature
 7. Écrans seulement : part des nœuds qui sont des instances du kit (en %)
 
-Les questions ouvertes sont suivies par kanshu dans `uikit.md`, hors compteurs.
+Les questions ouvertes sont suivies par Kanshu dans `uikit.md`, hors compteurs.
 Objectif affiché : 100 % de propriétés reliées dans le kit, décor exclu.

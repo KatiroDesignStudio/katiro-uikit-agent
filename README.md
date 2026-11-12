@@ -27,14 +27,15 @@ Deux modes, au choix au démarrage :
 - **Express** (par défaut) : un récapitulatif global après le scan, la construction de tout le kit d'une traite, puis une seule validation des doutes et une seule recette.
 - **Fin** : phase par phase (fondations, atomes, molécules, organismes), avec un récapitulatif et une recette par phase.
 
-| Agent | Rôle | Modèle |
+| Agent | Ce qu'il fait | Modèle |
 |---|---|---|
-| `kanshu` | Lead Design System. Te parle comme à un client, te fait valider ses recommandations, contrôle le travail. | celui de ta conversation (Sonnet conseillé) |
-| `seiri` | Relève et mesure le fichier, en lecture seule. | Sonnet |
-| `seiton` | UI Product Designer. Construit ce qui a été décidé, et rien d'autre. | Opus |
-| `seiso` | Écritures simples : Revue, Couverture, petites retouches. | Sonnet |
+| **Agent Kanshu (Design System Manager)** | Te parle comme à un client, te fait valider ses recommandations, contrôle le travail. | celui de ta conversation (Sonnet conseillé) |
+| **Agent Shindan (Designer Diagnostic)** | Mesure l'état du fichier et rédige le diagnostic, sans rien modifier. | celui de ta conversation |
+| **Agent Seiri (Designer Analyst)** | Relève et mesure le fichier, en lecture seule. | Sonnet |
+| **Agent Seiton (Designer Builder)** | Construit ce qui a été décidé, et rien d'autre. | Opus |
+| **Agent Seiso (Designer Finisher)** | Finitions : Revue, Couverture, petites retouches. | Sonnet |
 
-Chaque lancement d'agent est annoncé, avec son modèle. Pour économiser, choisis Sonnet pour ta conversation : le travail lourd se fait dans les agents.
+Chaque intervention d'un agent est affichée avec son nom, son rôle et son modèle. Pour économiser, choisis Sonnet pour ta conversation : le travail lourd se fait dans les agents.
 
 ## Prérequis
 - [Claude Code](https://claude.com/claude-code).

@@ -13,7 +13,7 @@ Ce qu'une convention couvre (`controles.md`, « Ce qui n'est pas une question »
 | Forme | Quand | Combien |
 |---|---|---|
 | **Récapitulatif** | Par défaut : toutes les décisions à prendre, d'un coup | Mode fin : un par phase. Mode express : un seul, global, après le scan. screens : un par lancement |
-| **Validation groupée** | Doutes de seiton et écarts de seiri qui demandent une décision | Une par contrôle (`pilotage.md`) |
+| **Validation groupée** | Doutes de Seiton et écarts de Seiri qui demandent une décision | Une par contrôle (`pilotage.md`) |
 | **Question individuelle** | Un choix qui change nettement le rendu ou la marque, ou un vrai choix sans recommandation claire | Posée avant le récapitulatif, une par appel |
 
 ## Le récapitulatif et la validation groupée

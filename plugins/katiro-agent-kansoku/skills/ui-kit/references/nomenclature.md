@@ -30,7 +30,7 @@ Logique BEM, traduite dans les outils natifs de Figma : un développeur lit `But
 
 ## Calques
 En minuscules, `kebab-case`, choisis dans ce vocabulaire : `container`, `content`, `icon`, `icon-leading`, `icon-trailing`, `label`, `text`, `title`, `description`, `helper-text`, `error-text`, `input`, `placeholder`, `image`, `avatar`, `badge`, `indicator`, `divider`, `action`, `actions`, `overlay`, `tag`, `tag-group`, `text-accent`, `form`, `column`, `logo`, `decor`, `filter-bar`, `check-list`, `screenshot`.
-Un rôle hors vocabulaire est un doute pendant la construction (seiton), un écart au contrôle (seiri). Aucun nom généré par Figma (`Frame 247`, `Rectangle 12`).
+Un rôle hors vocabulaire est un doute pendant la construction (Seiton), un écart au contrôle (Seiri). Aucun nom généré par Figma (`Frame 247`, `Rectangle 12`).
 Pages de présentation (`Couverture`, `Revue`, `Arborescence`, `00 Fondations`) : les calques d'échantillon portent le nom du jeton montré (`color/violet/500`, `shadow/sm`) ; les cadres s'appellent `titre`, `section/{nom}`, `colonne/{nom}`, `carte/{nom}`, `parcours/{nom}`, `ecran/{nom}`. Dans `01 Atomes` à `03 Organismes`, une section de famille porte le nom du composant (`Button`).
 
 ## Variables
@@ -45,7 +45,7 @@ Pages de présentation (`Couverture`, `Revue`, `Arborescence`, `00 Fondations`) 
 - Valeur décimale dans un nom : le point devient un tiret (`font/line-height/70-2`). Couleur avec alpha : suffixe `-a{pourcentage}` (`color/violet/800-a24`).
 - Collection à mode unique : le mode s'appelle `default`. `grid/{bp}/columns` a une portée masquée ; gutter et margin la portée d'espacement.
 - Cran de couleur créé par une règle et hors de l'espace sRGB : chroma réduite, teinte gardée. Cran au-delà du dernier de la rampe (900) : `950`, puis `975`.
-- Rôle d'état : `{rôle}-hover`, `{rôle}-pressed` (`color/bg/action-hover`). Tout autre nom créé par seiton hors de ces règles est un doute.
+- Rôle d'état : `{rôle}-hover`, `{rôle}-pressed` (`color/bg/action-hover`). Tout autre nom créé par Seiton hors de ces règles est un doute.
 - Arrondi à une variable, seulement quand une décision d'échelle l'a fixé (ou pour un cadre de présentation) : la plus proche ; à égale distance, la plus grande.
 - Les composants utilisent `semantic` pour les couleurs, jamais `primitives` directement, et `dimensions` pour le reste.
 - Les noms des primitives (teinte, cran) sont un point du récapitulatif de la phase 2.

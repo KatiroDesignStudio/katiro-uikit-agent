@@ -1,7 +1,7 @@
 {
   "name": "katiro-agent-kansoku",
-  "version": "0.5.1",
-  "description": "Remet au propre le UI Kit d'un fichier Figma en logique atomique : diagnostic en lecture seule (shindan), construction du kit validée par un Lead Design System, en mode express ou fin (ui-kit), branchement des écrans sur des copies, écran par écran ou parcours par parcours (screens). Relevé en lecture seule (seiri), construction par un UI Product Designer (seiton), écritures simples par un agent léger (seiso)",
+  "version": "0.5.2",
+  "description": "Remet au propre le UI Kit d'un fichier Figma en logique atomique : diagnostic en lecture seule (Agent Shindan, Designer Diagnostic), construction du kit validée par l'Agent Kanshu (Design System Manager), en mode express ou fin (ui-kit), branchement des écrans sur des copies, écran par écran ou parcours par parcours (screens). Agents Seiri (Designer Analyst), Seiton (Designer Builder) et Seiso (Designer Finisher)",
   "author": {
     "name": "Katiro Studio"
   },

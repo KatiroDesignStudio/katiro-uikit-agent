@@ -1,6 +1,6 @@
 # Structure du UI Kit dans Figma
 
-Règle fixe du plugin. seiton la met en place en phase 1 de `ui-kit` ; `Écrans kit` est créée par `screens` au premier écran branché.
+Règle fixe du plugin. Seiton la met en place en phase 1 de `ui-kit` ; `Écrans kit` est créée par `screens` au premier écran branché.
 
 ## Pages, dans cet ordre, en tête du fichier
 | Page | Contenu |
@@ -27,7 +27,7 @@ Hors atomes, le niveau est un jugement : il est proposé dans le récapitulatif 
 
 ## Mise en page commune
 - Chaque page commence par un cadre titre : nom de la page, une ligne de description, date de mise à jour.
-- Une **section Figma** par famille (`Button`, `TextField`…), dans l'ordre alphabétique. Les sections ne s'agrandissent pas seules : seiton les redimensionne.
+- Une **section Figma** par famille (`Button`, `TextField`…), dans l'ordre alphabétique. Les sections ne s'agrandissent pas seules : Seiton les redimensionne.
 - Dans chaque section : le component set, et au-dessus son nom et sa ligne de description. Un composant prévu pour fond sombre est présenté sur `color/bg/inverse`.
 - Espacements réguliers entre sections. Rien ne se chevauche, rien ne traîne hors section.
 - Les cadres de présentation utilisent les variables et styles du kit dès qu'ils existent. Ceux créés avant la phase 2 y passent dans le dernier lot de la phase 2, avant la recette : titres de page sur le style de titre le plus proche de 40, titre de couverture sur le plus grand style de titre du kit, texte courant sur le style de corps de 16, étiquettes et tableaux sur le style d'étiquette ; couleurs sur les rôles de texte (défaut, atténué, accent pour les liens), de fond (défaut, surface) et de contour (discret). Un style ou un rôle absent du kit est un doute ; un changement de taille de plus de 4 px est listé dans le rapport du lot, puis montré à la recette.
