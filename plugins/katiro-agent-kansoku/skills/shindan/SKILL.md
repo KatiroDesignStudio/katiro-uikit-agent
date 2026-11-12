@@ -1,14 +1,14 @@
 ---
 name: shindan
-description: Diagnostic en lecture seule d'un fichier Figma. Mesure l'état du UI Kit sans rien modifier (couleurs et tailles de texte uniques, composants et doublons, valeurs en dur, contrastes, icônes, polices) et rend un rapport chiffré, partageable, avec ce que le rangement par kanshu changerait. À utiliser pour savoir où en est un fichier Figma avant de le ranger.
+description: Diagnostic en lecture seule d'un fichier Figma. Mesure l'état du UI Kit sans rien modifier (couleurs et tailles de texte uniques, composants et doublons, valeurs en dur, contrastes, icônes, polices) et rend un rapport chiffré, partageable, avec ce que le rangement par ui-kit changerait. À utiliser pour savoir où en est un fichier Figma avant de le ranger.
 argument-hint: "[lien Figma]"
 ---
 # Shindan (診断) : diagnostic d'un fichier Figma
 
 Demande de l'utilisateur : $ARGUMENTS
-Références : `${CLAUDE_SKILL_DIR}/../kanshu/references/`
+Références : `${CLAUDE_SKILL_DIR}/../ui-kit/references/`
 
-Tu mesures, tu n'écris rien dans Figma et tu ne poses que les questions nécessaires au diagnostic. Le relevé est fait par l'agent `katiro-uikit-agent:seiri`, lancé au premier plan.
+Tu mesures, tu n'écris rien dans Figma et tu ne poses que les questions nécessaires au diagnostic. Le relevé est fait par l'agent `katiro-agent-kansoku:seiri`, lancé au premier plan.
 
 ## Déroulé
 1. Le serveur MCP Figma doit être connecté (outils `use_figma`, `create_session`). Sinon, explique comment le connecter (`/mcp`) et arrête-toi. Prends le lien Figma dans la demande, sinon demande-le, puis appelle `create_session` et transmets l'identifiant de session à seiri.
@@ -17,7 +17,7 @@ Tu mesures, tu n'écris rien dans Figma et tu ne poses que les questions nécess
 4. **seiri, mode survol**. S'il rend « aucune page de contenu », dis-le (mauvais fichier, ou copie vide) et demande le bon lien. Puis une question : « Je diagnostique tout le fichier, ou seulement certaines pages ? » Options : `Tout le fichier (Recommandé)` ; `Certaines pages`. Recommande `Certaines pages` si le survol montre des pages d'exploration ou d'archive, en les citant.
 5. **seiri, mode scan** sur ces pages, en nouveau scan. S'il rend « incomplet », relance-le en reprise : il repart du curseur.
 6. Écris `diagnostic.md` à la racine du dossier courant, au format ci-dessous, à partir de `.uikit/scan/synthese.json`.
-7. Présente le diagnostic en 8 lignes au plus. Propose ensuite le rangement : `/katiro-uikit-agent:kanshu {lien}`.
+7. Présente le diagnostic en 8 lignes au plus. Propose ensuite le rangement : `/katiro-agent-kansoku:ui-kit {lien}`.
 
 ## Format de `diagnostic.md`
 ```markdown

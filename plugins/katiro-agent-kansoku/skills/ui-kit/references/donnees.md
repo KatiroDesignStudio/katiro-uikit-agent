@@ -11,12 +11,13 @@ JSON, identifiants de nœuds Figma tels quels. Chaque fichier a un seul proprié
 | `scan/index.json` | seiri | `pages[]` : `{id, nom, etat, curseur}`, `etat` valant `a-faire`, `en-cours` ou `fait` |
 | `scan/{pageId}.json` | seiri | `inventaire` (variables, styles, composants de la page), `ecrans[]` : `{id, nom, compteurs}` (compteurs de `controles.md`, écran par écran) et `constats[]` : `{id, type, noeuds[], valeurs, occurrences, mesure, remplace}`, 20 exemples de nœuds au plus par constat |
 | `scan/synthese.json` | seiri | Compteurs agrégés (kit et écrans séparés), `ecrans[]` : `{id, nom, compteurs}`, et constats regroupés par type |
-| `scan/delta-P{phase}.json` | seiri | Constats à jour pour la phase, au même format. Ne vide pas `scan/` et continue la numérotation des constats. En phase 6, plan par écran `ecrans[]` : `{id, nom, compteurs, remplacements[] ({noeud, famille, decision, zoneLibre {l, h}, largeurContenu, disposition}), liaisons, corrections, cas[] ({noeud, motif})}`, `motif` valant `disposition-absente`, `zone-trop-petite`, `logo-vectoriel` ou `autre` |
+| `scan/delta-P{phase}.json` | seiri | Constats à jour pour la phase, au même format. Ne vide pas `scan/` et continue la numérotation des constats. |
+| `scan/plan-{ecranId}.json` | seiri | Plan d'écran (screens) : `{id, nom, compteurs, remplacements[] ({noeud, famille, decision, zoneLibre {l, h}, largeurContenu, disposition}), liaisons, corrections, cas[] ({noeud, motif}), manquesKit[] ({noeud, famille, type, detail})}`, `motif` valant `disposition-absente`, `zone-trop-petite` ou `autre`, `type` valant `variante-manquante`, `logo-non-surchargeable`, `couleur-sans-role` ou `autre` |
 | `controle-{lot}.json` | seiri | `ecarts[]` : `{noeud, regle, constate, attendu}`, `noeud` pouvant être l'identifiant d'une variable ou d'un style |
-| `ids.json` | seiton | `pages`, `collections`, `modes`, `variables`, `styles`, `composants` (nom vers `{id, page}`), `archives[]` (`{id, remplacePar, decision}`), `remplacements[]` (`{origine, instance, ecran}`), `presentation` (cadres titres, Revue, Couverture, Arborescence, sections et échantillons de 00 Fondations), `lots` (par lot : `debut` {dernier identifiant de nœud, comptages des pages d'écrans} écrit avant toute écriture, puis nœuds touchés) |
+| `ids.json` | seiton | `pages`, `collections`, `modes`, `variables`, `styles`, `composants` (nom vers `{id, page}`), `archives[]` (`{id, remplacePar, decision}`), `copies[]` (`{original, copie}`), `remplacements[]` (`{origine, instance, ecran}`), `presentation` (cadres titres, Revue, Couverture, Arborescence, sections et échantillons de 00 Fondations), `lots` (par lot : `debut` {dernier identifiant de nœud, comptages des pages d'écrans} écrit avant toute écriture, puis nœuds touchés) |
 
 ## Conventions
-- Identifiant de lot : `P{phase}-{nn}`, par exemple `P3-02`.
+- Identifiant de lot : `P{phase}-{nn}` pour ui-kit (`P3-02`) ; avec screens, `K{nn}` pour une retouche du kit et `E{nn}` pour un écran.
 - Dans un nom de fichier, le « : » d'un identifiant Figma devient « - » (`scan/2334-193.json`).
 - Identifiant de constat : `C{nnn}`, jamais réutilisé, y compris dans les deltas. Une question de `uikit.md` cite les constats qu'elle couvre.
 - Lien vers un nœud, pour l'utilisateur : `https://www.figma.com/design/{fileKey}/?node-id={id avec - à la place de :}`.

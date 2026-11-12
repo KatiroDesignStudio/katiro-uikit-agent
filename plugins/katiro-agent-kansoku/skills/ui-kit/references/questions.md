@@ -12,17 +12,17 @@ Ce qu'une convention couvre (`controles.md`, « Ce qui n'est pas une question »
 ## Trois formes
 | Forme | Quand | Combien |
 |---|---|---|
-| **Récapitulatif de phase** | Par défaut : toutes les décisions de la phase, en tête de phase | Un par phase ; en phase 6, un par écran |
-| **Validation groupée du lot** | Doutes de seiton et écarts de seiri d'un lot qui demandent une décision | Une par lot et par relance |
+| **Récapitulatif** | Par défaut : toutes les décisions à prendre, d'un coup | Mode fin : un par phase. Mode express : un seul, global, après le scan. screens : un par lancement |
+| **Validation groupée** | Doutes de seiton et écarts de seiri qui demandent une décision | Une par contrôle (`pilotage.md`) |
 | **Question individuelle** | Un choix qui change nettement le rendu ou la marque, ou un vrai choix sans recommandation claire | Posée avant le récapitulatif, une par appel |
 
-## Le récapitulatif (et la validation groupée)
-Dans le message, les points groupés par thème (Couleurs, Typographie, Icônes, Contenu, Button…), numérotés comme dans `uikit.md` :
+## Le récapitulatif et la validation groupée
+Dans le message, les points groupés par thème (Couleurs, Typographie, Icônes, Contenu, Button, Kit, un écran…), numérotés comme dans `uikit.md` :
 - **Q{n} {titre}** : constat en langage simple, preuves (liens vers les nœuds, nombre, valeurs), **recommandation**, impact. Une valeur qui change, même légèrement (une teinte rapprochée d'une primitive), est dite avec son écart. Trois lignes au plus par point ; une liste longue (14 noms de composants) va dans le `preview`.
 
 Puis une seule AskUserQuestion :
-- `question` : « {Phase} : je valide les {n} recommandations ? » (lot : « {Lot} : je valide les {n} réponses aux doutes ? »).
-- `header` : 12 caractères au plus (`Fondations`, `Lot P3-01`…).
+- `question` : « {Phase, Le UI Kit ou l'écran} : je valide les {n} recommandations ? » (validation groupée : « Je valide les {n} réponses aux doutes ? »).
+- `header` : 12 caractères au plus (`Fondations`, `UI Kit`, `Doutes`…).
 - `options` : `Tout valider (Recommandé)` ; `Je corrige des points`. `preview` : une ligne par point, `Q{n} {titre} → {recommandation}`.
 - Le champ libre reste ouvert : l'utilisateur y donne les numéros et sa correction (« Q12 : garder le gris »). Reprends seulement les points corrigés, en question individuelle si la correction ouvre un vrai choix.
 
@@ -38,8 +38,8 @@ Dans le champ libre, pour une question ou pour des points du récapitulatif (« 
 - « Plus tard » : le point passe en **reporté** ;
 - « Avec le client » : le point passe en **avec le client**, listé à part dans `uikit.md` pour être envoyé tel quel.
 
-## Recette (fin de phase)
-« {Phase} : je valide ? », avec un lien vers chaque section touchée et les chiffres de la phase. Options : `Je valide (Recommandé)` ; `À reprendre`. Avec « À reprendre », demande quoi, en une question ouverte.
+## Recette
+En fin de phase (mode fin), de kit (mode express) ou d'écran (screens) : « {Phase, Le UI Kit ou l'écran} : je valide ? », avec un lien vers chaque section touchée et les chiffres concernés. Options : `Je valide (Recommandé)` ; `À reprendre`. Avec « À reprendre », demande quoi, en une question ouverte.
 
 ## Après la réponse
 1. Écris tout de suite dans `uikit.md`, avec les noms complets (`color/bg/default`), une règle `R{n}` (s'applique partout et pour la suite) ou une décision `D{n}` (s'applique à des éléments précis), avec le numéro du point et la date. Un récapitulatif validé peut donner plusieurs R et D.

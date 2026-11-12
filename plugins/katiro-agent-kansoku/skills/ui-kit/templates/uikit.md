@@ -2,6 +2,8 @@
 
 Fichier Figma : {lien}
 Plan et siège : {plan}, siège {siège}
+Copie de travail : {C'est une copie, Je prends le risque}
+Mode : {express, fin}
 Démarré le : {date} · Dernière session : {date}
 Phase en cours : 0 Périmètre
 Prochaine action : {action}
@@ -17,8 +19,9 @@ Prochaine action : {action}
 | 3 Atomes | à faire | |
 | 4 Molécules | à faire | |
 | 5 Organismes | à faire | |
-| 6 Écrans | à faire | |
-| 7 Clôture | à faire | |
+| 6 Clôture | à faire | |
+
+En mode express, les phases 2 à 5 partagent le récapitulatif et la recette.
 
 ## Chiffres
 | | Avant | Maintenant |
@@ -46,13 +49,12 @@ Exclus ({n}) : {nombre par motif}
 Doublons tranchés : {groupes et version retenue}
 Kit existant : {repris, laissé intact, aucun}
 Couverture : {gardée, remplacée, aucune}
-Écrans branchés (phase 6) : {liste} · reportés : {liste}
 
 ## Référentiel
 Règles fixes du plugin : nomenclature, structure, contrôles (dossier `references/` du plugin).
 
 ### Règles (R)
-- R0 Périmètre : seuls les écrans retenus servent au kit et sont modifiés en phase 6. Les autres ne sont jamais modifiés.
+- R0 Périmètre : seuls les écrans retenus servent au kit et peuvent être branchés. Aucun écran d'origine n'est jamais modifié : screens branche des copies, dans `Écrans kit`.
 - R1 Aucune couleur, typo, espacement, rayon, bordure, opacité, ombre ni grille hors variable ou style dans le kit.
 
 ### Décisions (D)
@@ -61,8 +63,14 @@ Règles fixes du plugin : nomenclature, structure, contrôles (dossier `referenc
 ## Lots
 États : à faire, en cours, fait.
 
-| Lot | Familles | État |
+| Lot | Familles ou écran | État |
 |---|---|---|
+
+## Écrans branchés
+| Écran | Copie | Date | Recette |
+|---|---|---|---|
+
+Reportés : {liste}
 
 ## Questions
 États : ouverte, reportée, avec le client, tranchée.

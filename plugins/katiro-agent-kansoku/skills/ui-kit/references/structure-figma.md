@@ -1,6 +1,6 @@
 # Structure du UI Kit dans Figma
 
-Règle fixe du plugin. seiton la met en place en phase 1.
+Règle fixe du plugin. seiton la met en place en phase 1 de `ui-kit` ; `Écrans kit` est créée par `screens` au premier écran branché.
 
 ## Pages, dans cet ordre, en tête du fichier
 | Page | Contenu |
@@ -13,9 +13,10 @@ Règle fixe du plugin. seiton la met en place en phase 1.
 | `02 Molécules` | |
 | `03 Organismes` | |
 | `Archives` | Ce qui a été remplacé |
+| `Écrans kit` | Les copies des écrans branchés sur le kit, sous le nom de l'original, côte à côte dans l'ordre des parcours |
 | `---` | Séparateur (page vide nommée de tirets), puis les pages d'écrans existantes, inchangées |
 
-Sont exclues de tous les comptages : `Couverture`, `Revue`, `Arborescence`, `Archives`, les séparateurs et les couvertures existantes quel que soit leur nom.
+Sont exclues de tous les comptages, instances comprises : `Couverture`, `Revue`, `Arborescence`, `Archives`, `Écrans kit`, les séparateurs (page vide, ou nommée uniquement de tirets ou d'astérisques) et les couvertures existantes quel que soit leur nom (« Cover », « Thumbnail »…).
 
 ## Classement atomique
 - **Atome** : n'utilise aucun autre composant du kit (bouton, champ, badge). Seule règle mécanique. Une icône du kit ne compte pas pour ce classement (un bouton à icône reste un atome) ; les icônes elles-mêmes sont rangées dans `00 Fondations`.
@@ -46,9 +47,9 @@ Toute variable ou tout style créé après la phase 2 y est ajouté dans le mêm
 ## Arborescence
 - En tête : « {n} écrans de référence · {p} parcours · relevé du {date} ». Les écrans exclus sont seulement comptés.
 - Un arbre en auto-layout : un nœud par parcours, puis ses écrans. Traits simples entre les nœuds, recalculés à chaque passage (les connecteurs n'existent pas en Figma Design).
-- Chaque écran : nom, lien vers l'écran d'origine, et une vignette tant qu'il y a 60 écrans au plus (au-delà, pas de vignette). Vignette : copie réduite, recadrée à 1 200 px de haut à l'échelle d'origine, verrouillée, liens de prototype retirés.
+- Chaque écran : nom, lien vers l'écran d'origine (et vers sa copie dans `Écrans kit` une fois branché), et une vignette tant qu'il y a 60 écrans au plus (au-delà, pas de vignette). Vignette : copie réduite, recadrée à 1 200 px de haut à l'échelle d'origine, verrouillée, liens de prototype retirés.
 
 ## Archives
-- Un cadre `{écran}` par écran ; l'élément y garde sa taille d'origine (fixée avant le déplacement).
+- Un cadre `{écran}` par écran branché ; l'élément y garde sa taille d'origine (fixée avant le déplacement).
 - Chaque élément porte une étiquette : « Remplacé par {nom} · D{n} · {date} », D{n} étant la décision qui fixe ce remplacement.
 - Rien n'y est supprimé par l'agent. Le vidage est une décision de l'utilisateur, faite à la main.

@@ -1,34 +1,40 @@
-# katiro-uikit-agent
+# katiro-agent-kansoku
 
-Un plugin Claude Code qui remet au propre le UI Kit d'un fichier Figma.
+Un plugin Claude Code qui remet au propre le UI Kit d'un fichier Figma, puis branche tes écrans dessus.
 
-Tes composants sont éparpillés dans les pages, les couleurs sont en dur, trois boutons se ressemblent sans être le même ? L'agent mesure le fichier, te présente ses recommandations phase par phase, puis reconstruit un UI Kit rangé en logique atomique : fondations, atomes, molécules, organismes. Directement dans Figma, avant de brancher tes écrans dessus.
+Tes composants sont éparpillés dans les pages, les couleurs sont en dur, trois boutons se ressemblent sans être le même ? L'agent mesure le fichier, te présente ses recommandations, puis reconstruit un UI Kit rangé en logique atomique : fondations, atomes, molécules, organismes. Directement dans Figma.
 
-## Deux commandes
+## Trois commandes
 | Commande | Ce qu'elle fait | Écrit dans Figma |
 |---|---|---|
-| `/katiro-uikit-agent:shindan` | **Diagnostic** : un rapport chiffré de l'état du fichier (couleurs uniques, composants, doublons, valeurs en dur, contrastes) | Non |
-| `/katiro-uikit-agent:kanshu` | **Rangement** : reconstruit le UI Kit au propre, avec toi | Oui |
+| `/katiro-agent-kansoku:shindan` | **Diagnostic** : un rapport chiffré de l'état du fichier (couleurs uniques, composants, doublons, valeurs en dur, contrastes) | Non |
+| `/katiro-agent-kansoku:ui-kit` | **UI Kit** : reconstruit le kit au propre, avec toi. Tes écrans ne sont jamais modifiés | Oui, le kit seulement |
+| `/katiro-agent-kansoku:screens` | **Écrans** : branche un écran ou un parcours sur le kit, sur des copies des écrans | Oui, des copies |
 
 Commence par le diagnostic : il ne touche à rien et te dit où en est ton fichier. Lors de notre premier test, il a pris une dizaine de minutes pour 5 écrans et près de 5 000 calques.
 
-## Ce que le rangement produit
+## Ce que le UI Kit produit
 - Des **variables** (couleurs primitives et sémantiques, dimensions, grilles) et des **styles** de texte, d'effet et de grille, branchés entre eux.
 - Des **component sets** propres, nommés comme du code : `Button` · `variant=primary` · `size=md`.
 - Les **grilles** déduites de tes écrans, les **icônes** normalisées, les **composants manquants** repérés (header, footer, cartes…), les états et le focus vérifiés.
 - Une page **Revue** (avant/après, fait, ajusté, à décider) et une page **Arborescence** (les écrans de référence).
-- Un fichier **`uikit.md`** : avancement, règles fixées, décisions, questions, journal. On reprend là où on s'est arrêté.
+- Un fichier **`uikit.md`** : avancement, règles fixées, décisions, questions, écrans branchés, journal. On reprend là où on s'est arrêté.
 
 ## Le principe : aucune déduction sans validation
-L'agent ne choisit jamais à ta place. Tout ce qu'il déduit (deux composants à fusionner, une nuance à ramener, un contraste insuffisant, un libellé incohérent, une grille) est soumis à ta validation, avec ses preuves et sa recommandation. En tête de chaque phase, un seul récapitulatif : tu valides d'un coup, ou tu ne corriges que les exceptions. Les points portent sur des règles (« tous les blancs de fond deviennent `color/bg/default`, 212 cas ? »), pas sur chaque occurrence, et les conventions techniques qui ne changent pas le rendu s'appliquent sans question. Chaque phase se termine par ta recette.
+L'agent ne choisit jamais à ta place. Tout ce qu'il déduit (deux composants à fusionner, une nuance à ramener, un contraste insuffisant, une grille) t'est présenté avec ses preuves et sa recommandation, dans un seul récapitulatif : tu valides d'un coup, ou tu corriges les numéros qui ne te vont pas. Les conventions techniques qui ne changent pas le rendu s'appliquent sans question. Rien n'est supprimé : ce qui est remplacé part dans une page `Archives`.
 
-Tes écrans ne bougent pas pendant la construction : le kit est reconstruit à côté. Ils ne sont branchés sur le kit qu'à la fin, si tu le veux, et seulement les écrans définitifs. Rien n'est supprimé : ce qui est remplacé part dans une page `Archives`.
+Deux modes, au choix au démarrage :
+- **Express** (par défaut) : un récapitulatif global après le scan, la construction de tout le kit d'une traite, puis une seule validation des doutes et une seule recette.
+- **Fin** : phase par phase (fondations, atomes, molécules, organismes), avec un récapitulatif et une recette par phase.
 
-| Agent | Rôle |
-|---|---|
-| `kanshu` | Lead Design System. Te parle comme à un client, te fait valider ses recommandations, contrôle chaque lot. |
-| `seiri` | Relève et mesure le fichier, en lecture seule. |
-| `seiton` | UI Product Designer. Construit ce qui a été décidé, et rien d'autre. |
+| Agent | Rôle | Modèle |
+|---|---|---|
+| `kanshu` | Lead Design System. Te parle comme à un client, te fait valider ses recommandations, contrôle le travail. | celui de ta conversation (Sonnet conseillé) |
+| `seiri` | Relève et mesure le fichier, en lecture seule. | Sonnet |
+| `seiton` | UI Product Designer. Construit ce qui a été décidé, et rien d'autre. | Opus |
+| `seiso` | Écritures simples : Revue, Couverture, petites retouches. | Sonnet |
+
+Chaque lancement d'agent est annoncé, avec son modèle. Pour économiser, choisis Sonnet pour ta conversation : le travail lourd se fait dans les agents.
 
 ## Prérequis
 - [Claude Code](https://claude.com/claude-code).
@@ -40,23 +46,27 @@ Tes écrans ne bougent pas pendant la construction : le kit est reconstruit à c
 claude plugin marketplace add KatiroDesignStudio/katiro-uikit-agent
 ```
 ```bash
-claude plugin install katiro-uikit-agent@katiro-uikit
+claude plugin install katiro-agent-kansoku@katiro-uikit
 ```
 Ouvre ensuite une nouvelle session Claude Code.
 
 ## Utiliser
+**Duplique d'abord ton fichier Figma** (Fichier > Dupliquer) et travaille sur la copie : on va tout ranger au propre.
+
 Crée un dossier par projet, ouvre Claude Code dedans, puis :
 ```
-/katiro-uikit-agent:shindan https://www.figma.com/design/...
+/katiro-agent-kansoku:shindan https://www.figma.com/design/...
 ```
 ```
-/katiro-uikit-agent:kanshu https://www.figma.com/design/...
+/katiro-agent-kansoku:ui-kit https://www.figma.com/design/...
 ```
-`/katiro-uikit-agent:kanshu` sans texte reprend le travail en cours.
+`/katiro-agent-kansoku:ui-kit` sans texte reprend le travail en cours.
 
-Pour un premier essai, **duplique ton fichier Figma** et lance l'agent sur la copie. Au début de chaque phase qui écrit dans Figma, l'agent te demande d'enregistrer une version dans l'historique (Cmd+Option+S). En phase 6, celle qui modifie tes écrans, il le demande avant chaque écran.
-
-Brancher un écran sur le kit prend 15 à 20 minutes : commence par un écran témoin, les autres restent en option, leur plan est prêt.
+Une fois le kit recetté, branche tes écrans, un écran ou un parcours à la fois :
+```
+/katiro-agent-kansoku:screens Accueil
+```
+L'agent duplique chaque écran dans une page `Écrans kit` et ne branche que la copie : tes écrans d'origine ne bougent jamais. Compte 15 à 20 minutes et une recette par écran. Commence par un écran témoin, celui qui emploie le plus de composants du kit.
 
 ## Ce qu'il ne fait pas
 - Pas de documentation d'usage : le kit se lit tout seul.
