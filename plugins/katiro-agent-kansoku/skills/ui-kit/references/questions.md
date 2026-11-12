@@ -12,7 +12,7 @@ Ce qu'une convention couvre (`controles.md`, « Ce qui n'est pas une question »
 ## Trois formes
 | Forme | Quand | Combien |
 |---|---|---|
-| **Récapitulatif** | Par défaut : toutes les décisions à prendre, d'un coup | Mode fin : un par phase. Mode express : un seul, global, après le scan. screens : un par lancement |
+| **Récapitulatif** | Par défaut : toutes les décisions à prendre, d'un coup | Mode fin : un par phase. Mode express : un seul, global, après le scan. ecrans : un par lancement |
 | **Validation groupée** | Doutes de Seiton et écarts de Seiri qui demandent une décision | Une par contrôle (`pilotage.md`) |
 | **Question individuelle** | Un choix qui change nettement le rendu ou la marque, ou un vrai choix sans recommandation claire | Posée avant le récapitulatif, une par appel |
 
@@ -39,7 +39,7 @@ Dans le champ libre, pour une question ou pour des points du récapitulatif (« 
 - « Avec le client » : le point passe en **avec le client**, listé à part dans `uikit.md` pour être envoyé tel quel.
 
 ## Recette
-En fin de phase (mode fin), de kit (mode express) ou d'écran (screens) : « {Phase, Le UI Kit ou l'écran} : je valide ? », avec un lien vers chaque section touchée et les chiffres concernés. Options : `Je valide (Recommandé)` ; `À reprendre`. Avec « À reprendre », demande quoi, en une question ouverte.
+En fin de phase (mode fin), de kit (mode express) ou d'écran (ecrans) : « {Phase, Le UI Kit ou l'écran} : je valide ? », avec un lien vers chaque section touchée et les chiffres concernés. Options : `Je valide (Recommandé)` ; `À reprendre`. Avec « À reprendre », demande quoi, en une question ouverte.
 
 ## Quand l'utilisateur ne suit pas ta recommandation
 Dis une fois, en une phrase, la conséquence mesurée, puis applique son choix : « OK, on garde le gris. Il échoue au contraste sur fond clair (2,8:1 pour 4,5 demandé). » Tu n'insistes pas et tu ne reposes pas la question. Sans conséquence mesurable, applique sans commentaire. La conséquence est notée dans la décision D.

@@ -1,6 +1,6 @@
 # Pilotage
 
-Règles de Kanshu, communes à `ui-kit` et `screens`.
+Règles de Kanshu, communes à `ui-kit` et `ecrans`.
 
 ## Règle d'or : aucune déduction sans validation
 | Catégorie | Définition | Ce que tu fais |
@@ -17,8 +17,8 @@ Dans le doute, c'est une déduction. Juger qu'un travail est réussi en est une 
 
 ## Économie
 - Un agent qui a déjà le contexte d'une tâche est **continué** (SendMessage, avec son identifiant), pas relancé. Nouveau lancement seulement s'il dit manquer de place.
-- Seiton : un seul par phase en mode fin ; en mode express, un par niveau au plus ; avec `screens`, un par chantier (écrans et retouches du kit).
-- Contrôle Seiri à la fin d'une phase (fin), du kit (express) ou d'un écran (`screens`), jamais après chaque lot.
+- Seiton : un seul par phase en mode fin ; en mode express, un par niveau au plus ; avec `ecrans`, un par chantier (écrans et retouches du kit).
+- Contrôle Seiri à la fin d'une phase (fin), du kit (express) ou d'un écran (`ecrans`), jamais après chaque lot.
 - Pas de scan delta quand le scan initial couvre déjà la phase.
 - La Revue, la Couverture, les dates et les petites retouches désignées nœud par nœud vont à **Seiso**, jamais à Seiton.
 - `get_screenshot` par section touchée, jamais un écran ou une page entière.
@@ -26,8 +26,8 @@ Dans le doute, c'est une déduction. Juger qu'un travail est réussi en est une 
 ## Noms, rôles, modèles et annonce
 | Étiquette (toujours en entier) | Modèle | Travail |
 |---|---|---|
-| **Agent Kanshu (Design System Manager)** | celui de la conversation | Parle à l'utilisateur, fait valider, pilote, contrôle (`ui-kit`, `screens`) |
-| **Agent Shindan (Designer Diagnostic)** | celui de la conversation | Diagnostic en lecture seule (`shindan`) |
+| **Agent Kanshu (Design System Manager)** | celui de la conversation | Parle à l'utilisateur, fait valider, pilote, contrôle (`ui-kit`, `ecrans`) |
+| **Agent Shindan (Designer Diagnostic)** | celui de la conversation | Diagnostic en lecture seule (`diagnostic`) |
 | **Agent Seiri (Designer Analyst)** | Sonnet | Relevés, scans, plans, contrôles (mesures par le code) |
 | **Agent Seiton (Designer Builder)** | Opus | Construction : variables, styles, composants, remplacements dans les écrans |
 | **Agent Seiso (Designer Finisher)** | Sonnet | Revue, Couverture, dates, petites retouches |

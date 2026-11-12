@@ -1,6 +1,6 @@
 ---
-name: shindan
-description: Diagnostic en lecture seule d'un fichier Figma. Mesure l'état du UI Kit sans rien modifier (couleurs et tailles de texte uniques, composants et doublons, valeurs en dur, contrastes, icônes, polices) et rend un rapport chiffré, partageable, avec ce que le rangement par ui-kit changerait. À utiliser pour savoir où en est un fichier Figma avant de le ranger.
+name: diagnostic
+description: "Agent Shindan (Designer Diagnostic) : diagnostic en lecture seule d'un fichier Figma. Mesure l'état du UI Kit sans rien modifier (couleurs et tailles de texte uniques, composants et doublons, valeurs en dur, contrastes, icônes, polices) et rend un rapport chiffré et partageable. À utiliser quand l'utilisateur veut un diagnostic, un audit ou un état des lieux d'un fichier Figma (« fais un diagnostic de mon fichier Figma »). Se lance aussi avec /diagnostic suivi du lien Figma."
 argument-hint: "[lien Figma]"
 ---
 # Agent Shindan (診断, Designer Diagnostic) : diagnostic d'un fichier Figma
@@ -19,7 +19,7 @@ Tu mesures, tu n'écris rien dans Figma et tu ne poses que les questions nécess
 4. **Seiri, mode survol**. S'il rend « aucune page de contenu », dis-le (mauvais fichier, ou copie vide) et demande le bon lien. Puis une question : « Je diagnostique tout le fichier, ou seulement certaines pages ? » Options : `Tout le fichier (Recommandé)` ; `Certaines pages`. Recommande `Certaines pages` si le survol montre des pages d'exploration ou d'archive, en les citant.
 5. **Seiri, mode scan** sur ces pages, en nouveau scan. S'il rend « incomplet », relance-le en reprise : il repart du curseur.
 6. Écris `diagnostic.md` à la racine du dossier courant, au format ci-dessous, à partir de `.uikit/scan/synthese.json`.
-7. Présente le diagnostic en 8 lignes au plus : d'abord ce qui va bien (mesuré), puis les 3 constats qui coûtent le plus en maintenance, puis ce que le rangement changerait, en chiffres. Propose ensuite le rangement : `/katiro-agent-kansoku:ui-kit {lien}`. Dernière ligne, la signature (`pilotage.md`).
+7. Présente le diagnostic en 8 lignes au plus : d'abord ce qui va bien (mesuré), puis les 3 constats qui coûtent le plus en maintenance, puis ce que le rangement changerait, en chiffres. Propose ensuite le rangement : `/ui-kit {lien}`. Dernière ligne, la signature (`pilotage.md`).
 
 ## Format de `diagnostic.md`
 ```markdown

@@ -1,6 +1,6 @@
 # Structure du UI Kit dans Figma
 
-Règle fixe du plugin. Seiton la met en place en phase 1 de `ui-kit` ; `Écrans kit` est créée par `screens` au premier écran branché.
+Règle fixe du plugin. Seiton la met en place en phase 1 de `ui-kit` ; `Écrans kit` est créée par `ecrans` au premier écran branché.
 
 ## Pages, dans cet ordre, en tête du fichier
 | Page | Contenu |
