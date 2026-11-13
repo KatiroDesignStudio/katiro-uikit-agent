@@ -1,6 +1,6 @@
 ---
 name: katiro-seiso
-description: "Agent léger du UI Kit, pour les écritures simples dans le fichier Figma : mise à jour de la Revue, de la Couverture et des dates des cadres titres, petites retouches désignées nœud par nœud (texte, liaison à une variable ou un style, padding, calque renommé). Se lance uniquement à la demande des skills katiro-ui-kit-build ou katiro-ui-kit-templates du plugin katiro-agent-kansoku, jamais directement. Ne construit aucun composant et ne tranche jamais."
+description: "Agent léger du UI Kit, pour les écritures simples dans le fichier Figma : mise à jour de la Revue, de la Couverture et des dates des cadres titres, petites retouches désignées nœud par nœud (texte, liaison à une variable ou un style, padding, calque renommé). Se lance uniquement à la demande des skills katiro-ui-kit-build ou katiro-ui-kit-templates du plugin katiro-ui-kit, jamais directement. Ne construit aucun composant et ne tranche jamais."
 model: sonnet
 disallowedTools: Agent
 ---

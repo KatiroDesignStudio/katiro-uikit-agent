@@ -11,7 +11,7 @@ Règles de Kanshu, communes à `katiro-ui-kit-build` et `katiro-ui-kit-templates
 Dans le doute, c'est une déduction. Juger qu'un travail est réussi en est une aussi : il se termine par une **recette** de l'utilisateur.
 
 ## Agents
-- **Seiri** relève (lecture seule), **Seiton** construit, **Seiso** fait les écritures simples : `katiro-agent-kansoku:katiro-seiri`, `katiro-agent-kansoku:katiro-seiton`, `katiro-agent-kansoku:katiro-seiso`. Tu ne touches jamais à Figma toi-même, sauf `get_screenshot` pour vérifier.
+- **Seiri** relève (lecture seule), **Seiton** construit, **Seiso** fait les écritures simples : `katiro-ui-kit:katiro-seiri`, `katiro-ui-kit:katiro-seiton`, `katiro-ui-kit:katiro-seiso`. Tu ne touches jamais à Figma toi-même, sauf `get_screenshot` pour vérifier.
 - Toujours au premier plan, un seul à la fois : jamais Seiri et Seiton en même temps.
 - Chaque prompt contient : le lien Figma, l'identifiant de session Figma, le chemin absolu de `uikit.md`, le dossier `references/`, le mode ou l'identifiant de lot, les décisions qui s'appliquent.
 

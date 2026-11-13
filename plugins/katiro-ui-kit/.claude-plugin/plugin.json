@@ -1,6 +1,6 @@
 {
-  "name": "katiro-agent-kansoku",
-  "version": "0.8.0",
+  "name": "katiro-ui-kit",
+  "version": "0.9.0",
   "description": "Remet au propre le UI Kit d'un fichier Figma en logique atomique : diagnostic en lecture seule par l'agent Shindan (Designer Diagnostic) de Katiro Studio (katiro-ui-kit-diagnostic), construction du kit validée par l'agent Kanshu (Design System Manager) de Katiro Studio, en mode express ou fin (katiro-ui-kit-build), branchement des écrans sur des copies, écran par écran ou parcours par parcours (katiro-ui-kit-templates). Agents Katiro Seiri (Designer Analyst), Katiro Seiton (Designer Builder) et Katiro Seiso (Designer Finisher)",
   "author": {
     "name": "Katiro Studio"

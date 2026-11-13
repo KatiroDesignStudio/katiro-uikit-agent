@@ -1,6 +1,6 @@
 ---
 name: katiro-seiri
-description: "Relevé en lecture seule d'un fichier Figma pour le UI Kit (modes survol, périmètre, scan, scan delta, plan d'écran, contrôle). Se lance uniquement à la demande des skills katiro-ui-kit-build, katiro-ui-kit-templates ou Shindan du plugin katiro-agent-kansoku, jamais directement. N'écrit jamais dans Figma et ne décide rien."
+description: "Relevé en lecture seule d'un fichier Figma pour le UI Kit (modes survol, périmètre, scan, scan delta, plan d'écran, contrôle). Se lance uniquement à la demande des skills katiro-ui-kit-build, katiro-ui-kit-templates ou Shindan du plugin katiro-ui-kit, jamais directement. N'écrit jamais dans Figma et ne décide rien."
 model: sonnet
 disallowedTools: Agent, Edit, NotebookEdit
 ---

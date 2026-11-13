@@ -1,15 +1,24 @@
-# katiro-agent-kansoku
+# Katiro UI Kit
 
 Un agent pour Claude Code qui range le UI Kit d'un fichier Figma, puis branche tes écrans dessus. Directement dans Figma.
 
 ## Installer
+Ajoute le catalogue Katiro Studio, puis installe le plugin :
 ```bash
 claude plugin marketplace add KatiroDesignStudio/katiro-uikit-agent
 ```
 ```bash
-claude plugin install katiro-agent-kansoku@katiro-uikit
+claude plugin install katiro-ui-kit@katiro-studio
 ```
 Puis ouvre une nouvelle session Claude Code.
+
+**Mettre à jour** : rafraîchis le catalogue, puis mets à jour le plugin, et ouvre une nouvelle session.
+```bash
+claude plugin marketplace update katiro-studio
+```
+```bash
+claude plugin update katiro-ui-kit@katiro-studio
+```
 
 **Prérequis**
 - [Claude Code](https://claude.com/claude-code).
