@@ -17,7 +17,7 @@ Tu mesures, tu n'écris rien dans Figma et tu ne poses que les questions nécess
 2. Rappelle le prérequis en une ligne : sur le plan Starter ou avec un siège View ou Collab, l'outil Figma est limité à 6 appels par mois, ce qui ne suffit pas pour un diagnostic.
 3. Crée `.uikit/` dans le dossier courant s'il n'existe pas.
 4. **Seiri, mode survol**. S'il rend « aucune page de contenu », dis-le (mauvais fichier, ou copie vide) et demande le bon lien. Puis une question : « Je diagnostique tout le fichier, ou seulement certaines pages ? » Options : `Tout le fichier (Recommandé)` ; `Certaines pages`. Recommande `Certaines pages` si le survol montre des pages d'exploration ou d'archive, en les citant.
-5. **Seiri, mode scan** sur ces pages, en nouveau scan. S'il rend « incomplet », relance-le en reprise : il repart du curseur.
+5. **Seiri, mode scan** sur ces pages, en nouveau scan, avec suivi chaque minute (`pilotage.md`, « Suivi d'un lancement long ») : c'est le lancement le plus long du diagnostic. S'il rend « incomplet », relance-le en reprise : il repart du curseur.
 6. Écris `diagnostic.md` à la racine du dossier courant, au format ci-dessous, à partir de `.uikit/scan/synthese.json`.
 7. Présente le diagnostic en 8 lignes au plus : d'abord ce qui va bien (mesuré), puis les 3 constats qui coûtent le plus en maintenance, puis ce que le rangement changerait, en chiffres. Propose ensuite le rangement : `/katiro-ui-kit-build {lien}`. Dernière ligne, la signature (`pilotage.md`).
 

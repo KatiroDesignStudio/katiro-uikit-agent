@@ -41,9 +41,9 @@ claude plugin update katiro-ui-kit@katiro-studio
 |---|---|---|
 | **L'agent Kanshu** (Design System Manager) de Katiro Studio | Te parle, te fait valider, contrôle | celui de ta conversation |
 | **L'agent Shindan** (Designer Diagnostic) de Katiro Studio | Réalise le diagnostic | celui de ta conversation |
-| **Katiro Seiri** (Designer Analyst) | Mesure le fichier, en lecture seule | Sonnet |
-| **Katiro Seiton** (Designer Builder) | Construit ce qui a été validé | Opus |
-| **Katiro Seiso** (Designer Finisher) | Fait les finitions | Sonnet |
+| **Agent Seiri** (Designer Analyst) de Katiro Studio | Mesure le fichier, en lecture seule | Sonnet |
+| **Agent Seiton** (Designer Builder) de Katiro Studio | Construit ce qui a été validé | Opus |
+| **Agent Seiso** (Designer Finisher) de Katiro Studio | Fait les finitions | Sonnet |
 
 Pour économiser, choisis Sonnet pour ta conversation : le travail lourd se fait dans les agents.
 
@@ -52,6 +52,7 @@ Pour économiser, choisis Sonnet pour ta conversation : le travail lourd se fait
 - **Rien n'est supprimé.** Ce qui est remplacé part dans une page `Archives`.
 - **Tes écrans d'origine ne sont jamais modifiés.**
 - **Tout est noté** dans `uikit.md` : décisions, avancement, questions. On reprend là où on s'est arrêté.
+- **Tu sais où on en est.** Pendant les longs travaux (scan, construction), tu as des nouvelles chaque minute.
 
 ## Ce qu'il ne fait pas
 Pas de documentation d'usage, pas de bibliothèque partagée, pas de motion. Il fait le gros du travail, le designer finit.
