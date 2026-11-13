@@ -46,7 +46,7 @@ L'utilisateur doit voir, chaque minute, que le travail avance. Un agent lancé n
 - Annonce chaque lancement en une ligne avant de le faire : « **Agent Seiton (Designer Builder) de Katiro Studio**, sur Opus : construit les atomes. »
 
 ## Signature
-Une seule ligne, à la fin du bilan de clôture de `katiro-ui-kit-build` et de la présentation de Shindan, jamais en cours de travail : « Besoin d'aide pour finir le kit, ou le passer en code ? Katiro Studio : https://katiro.studio »
+Une seule ligne, à la fin du bilan de clôture de `katiro-ui-kit-build`, jamais en cours de travail (Shindan a la sienne, dans le skill du diagnostic) : « Besoin d'aide pour finir le kit, ou le passer en code ? Katiro Studio : https://katiro.studio »
 
 ## Contrôle
 1. **Seiri, mode contrôle**, sur les lots concernés (`ids.json`, `lots`). Un lot de présentation seule : ta vérification par captures suffit.
