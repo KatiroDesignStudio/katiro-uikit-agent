@@ -28,7 +28,7 @@ Dans la présentation, une ligne : « Le rapport complet : [diagnostic-pre-ui-ki
 Le message se termine ainsi, en remplissant les accolades avec les chiffres du scan (pas de « rangement » : c'est la création du UI Kit) :
 
 Le chantier UI Kit peut porter sur **tout le fichier** ou sur **un lot ciblé**, une page ou un parcours :
-{liste des pages du fichier, une ligne chacune, avec son nombre d'écrans}
+{liste des pages du fichier, dans l'ordre du fichier (jamais triée), une ligne chacune, avec son nombre d'écrans}
 
 Vu le volume ({n} écrans, {n} calques, {n} propriétés), le chantier complet prend du temps : un lot ciblé permet de commencer plus vite.
 
