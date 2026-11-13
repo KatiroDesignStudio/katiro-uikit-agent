@@ -26,6 +26,12 @@ Puis une seule AskUserQuestion :
 - `options` : `Tout valider (Recommandé)` ; `Je corrige des points`. `preview` : une ligne par point, `Q{n} {titre} → {recommandation}`.
 - Le champ libre reste ouvert : l'utilisateur y donne les numéros et sa correction (« Q12 : garder le gris »). Reprends seulement les points corrigés, en question individuelle si la correction ouvre un vrai choix.
 
+## Mêmes mots dans la question et dans les réponses
+L'utilisateur lit la question, puis les boutons : les mots de la question doivent revenir à l'identique dans les réponses, jamais un synonyme ni un nom interne.
+- Oui : « Je construis le kit d'une seule traite, ou on y va ensemble phase par phase ? » → `D'une seule traite` ; `Phase par phase`.
+- Non : la même question avec `Express` et `Fin` (deux mots que la question ne contient pas, et « Fin » se lit aussi comme « avec finesse »).
+Les noms internes (`express`, `fin`, `R0`, `P3-02`) ne sont jamais montrés à l'utilisateur.
+
 ## La question individuelle (AskUserQuestion, une seule par appel)
 - Avant : constat, preuves et impact, en 3 lignes au plus, comme un point du récapitulatif.
 - `question` : une phrase qui se suffit à elle-même.

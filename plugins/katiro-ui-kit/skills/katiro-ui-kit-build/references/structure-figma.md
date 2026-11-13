@@ -20,6 +20,20 @@ Pas de numéro devant les pages du kit : l'ordre de la liste suffit, et le préf
 
 Sont exclues de tous les comptages, instances comprises : `Couverture`, `Revue`, `Arborescence`, `Archives`, `Écrans kit`, les séparateurs (page vide, ou nommée uniquement de tirets ou d'astérisques) et les couvertures existantes quel que soit leur nom (« Cover », « Thumbnail »…).
 
+## Kit existant
+Selon `kitExistant` (`perimetre-valide.json`) :
+
+| Valeur | Réponse | Pages du kit | Composants existants | Récapitulatifs |
+|---|---|---|---|---|
+| `complete` | Je le complète | Ses pages restent les pages du kit. Les pages du plugin qui manquent sont créées (Revue, Arborescence, Archives, Couverture sans couverture gardée). Renommer ses pages en `UI Kit · …` est un point du récapitulatif | Gardés tels quels. Seuls ajouts : nouvelles familles, variantes et propriétés | Seulement les manques : familles absentes, variantes manquantes, valeurs des écrans sans variable ni style |
+| `verifie` | Je le vérifie et je le complète | Idem | Retouchés **sans changer leur rendu** (ci-dessous), plus les ajouts | Les manques, puis les écarts du kit : valeurs non reliées, noms hors nomenclature, contrastes, états et focus manquants |
+| `repris` | Je le reconstruis au propre | Pages du plugin ; ses pages passent dans `Archives` une fois vidées | Familles conformes déplacées telles quelles dans leur page de niveau ; les autres reconstruites à partir de copies. Variables et styles gardés, seulement renommés (une nouvelle valeur donne une nouvelle variable) | Tous les points, comme un fichier sans kit |
+| `intact` | Je n'y touche pas | Ses pages passent après le séparateur | Ignorés | Comme un fichier sans kit |
+
+**Famille conforme** : toutes ses valeurs reliées à une variable ou un style, nom et propriétés au format de `nomenclature.md`, contrastes réussis, états attendus présents.
+
+**Retouche sans changer le rendu**, seule modification permise sur un composant existant : renommer (composant, propriété, calque) ; relier une valeur à une variable ou un style **de même valeur** ; ajouter une variante ou une propriété dont la valeur par défaut garde le rendu actuel ; déplacer une section ou un component set dans sa page de niveau (ses instances restent liées). Tout ce qui changerait le rendu de ses variantes (valeur, taille, structure) devient une nouvelle variante, ou un doute. Les instances des écrans suivent ces retouches sans changer d'apparence : les maquettes ne sont pas impactées.
+
 ## Classement atomique
 - **Atome** : n'utilise aucun autre composant du kit (bouton, champ, badge). Seule règle mécanique. Une icône du kit ne compte pas pour ce classement (un bouton à icône reste un atome) ; les icônes elles-mêmes sont rangées dans `UI Kit · Fondations`.
 - **Molécule** : assemble des atomes pour une seule fonction (champ avec label et aide, ligne de liste, carte simple).

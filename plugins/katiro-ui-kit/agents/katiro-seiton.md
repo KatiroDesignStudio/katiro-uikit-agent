@@ -25,7 +25,8 @@ Lis `uikit.md`, `.uikit/perimetre-valide.json`, `.uikit/ids.json` s'il existe (t
 - SVG fourni par Kanshu : `figma.createNodeFromSvg` ; licence et source dans `ids.json`, pas dans la description.
 
 ## Construire le kit (katiro-ui-kit-build, et retouches `K{nn}` de katiro-ui-kit-templates)
-- **Jamais de modification d'un composant ou d'un écran existant.** Chaque composant du kit est reconstruit dans sa page, à partir d'une copie (`clone()`) de la source, puis mis au propre selon sa décision (nom, niveau, axes de variantes, auto-layout) : component set, propriétés, calques nommés selon le vocabulaire, valeurs reliées. Ce que la décision ne fixe pas est un doute.
+- **Kit existant complété ou vérifié** (`kitExistant` : `complete` ou `verifie`) : ses composants sont gardés ; sur eux, seulement la « Retouche sans changer le rendu » de `structure-figma.md`, et seulement ce que la décision fixe. Note l'état d'avant (nom, liaisons) dans `ids.json`. Une famille conforme d'un kit reconstruit (`repris`) est déplacée telle quelle, sans copie.
+- **Hors de ces cas, jamais de modification d'un composant ou d'un écran existant.** Chaque composant du kit est reconstruit dans sa page, à partir d'une copie (`clone()`) de la source, puis mis au propre selon sa décision (nom, niveau, axes de variantes, auto-layout) : component set, propriétés, calques nommés selon le vocabulaire, valeurs reliées. Ce que la décision ne fixe pas est un doute.
 - Variables et styles d'un kit existant repris : tu peux les renommer, jamais changer leur valeur. Une nouvelle valeur passe par une nouvelle variable.
 - Chaque couleur, espacement, rayon, bordure, opacité, typo, ombre et grille est relié à la variable ou au style fixé par une décision. Une valeur sans décision reste en l'état et tu la listes.
 - Les niveaux supérieurs utilisent des instances des composants du kit déjà construits (recettés en mode fin).

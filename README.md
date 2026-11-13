@@ -36,6 +36,8 @@ claude plugin update katiro-ui-kit@katiro-studio
 | « Range le UI Kit de mon fichier Figma : {lien} » | Le kit est reconstruit au propre : fondations, atomes, molécules, organismes. Tes écrans ne bougent pas. | `/katiro-ui-kit-build` |
 | « Branche l'écran Accueil sur le UI Kit » | Une copie de l'écran est branchée sur le kit, un écran ou un parcours à la fois. | `/katiro-ui-kit-templates` |
 
+**Ton fichier a déjà un UI Kit ?** L'agent te propose de le compléter, de le vérifier, ou de le reconstruire au propre. Ses composants ne sont retouchés que sans changer leur rendu.
+
 ## Les agents
 | Agent | Rôle | Modèle |
 |---|---|---|

@@ -2,8 +2,8 @@
 
 Fichier Figma : {lien}
 Plan et siège : {plan}, siège {siège}
-Copie de travail : {C'est une copie, Je prends le risque}
-Mode : {express, fin}
+Fichier de travail : {ce fichier, copie fournie}
+Mode : {express (d'une seule traite), fin (phase par phase)}
 Démarré le : {date} · Dernière session : {date}
 Phase en cours : 0 Périmètre
 Prochaine action : {action}
@@ -47,7 +47,7 @@ Règle d'identification : {règle}
 Écrans retenus ({n}) : voir `.uikit/perimetre-valide.json`
 Exclus ({n}) : {nombre par motif}
 Doublons tranchés : {groupes et version retenue}
-Kit existant : {repris, laissé intact, aucun}
+Kit existant : {complété, vérifié et complété, reconstruit au propre, laissé intact, aucun}
 Couverture : {gardée, remplacée, aucune}
 
 ## Référentiel
