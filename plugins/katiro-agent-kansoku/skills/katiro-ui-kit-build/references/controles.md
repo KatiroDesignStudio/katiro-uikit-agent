@@ -44,7 +44,7 @@ Points du récapitulatif (de phase en mode fin, global en mode express), avant l
 ## Ce qui n'est pas une question (exécution)
 Décisions et règles déjà prises :
 - Relier une valeur à la variable qu'une décision a fixée pour elle ; appliquer le format de nommage à un nom décidé ; construire un composant selon son récapitulatif (nom, niveau, axes, auto-layout).
-- Ranger dans `01 Atomes` un composant qui n'utilise aucun autre composant du kit (classement : `structure-figma.md`).
+- Ranger dans `UI Kit · Atomes` un composant qui n'utilise aucun autre composant du kit (classement : `structure-figma.md`).
 - Mettre en place la structure des pages, de la Revue, de la Couverture et de l'Arborescence ; passer les cadres de présentation sur les styles et rôles du kit dans le dernier lot de la phase 2 ; mettre à jour en fin de phase la date des cadres titres des pages écrites.
 - Créer un état manquant avec la règle de dérivation décidée en phase 2.
 

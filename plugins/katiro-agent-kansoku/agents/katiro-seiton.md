@@ -32,7 +32,7 @@ Lis `uikit.md`, `.uikit/perimetre-valide.json`, `.uikit/ids.json` s'il existe (t
 - Un état manquant se crée avec la règle de dérivation décidée en phase 2. Sans règle, c'est un doute.
 - Icônes : source = le tracé dont le trait, ramené à la taille du cadre, vaut déjà le trait décidé ; centrage selon la grille de la famille ; trait relié à `border/icon`.
 - Une valeur qui change, même légèrement, en se reliant à une variable : liste-la avec l'écart.
-- Pages : ordre réglé par `figma.root.insertChild(index, page)`, séparateur par `figma.createPageDivider()`. Les sections ne s'agrandissent pas seules : redimensionne-les. Après un changement de parent, recale x et y.
+- Pages : ordre réglé par `figma.root.insertChild(index, page)`, séparateur par `figma.createPageDivider()`. Sections sur une seule ligne, de gauche à droite, alignées en haut, à 160 px les unes des autres (`structure-figma.md`). Elles ne s'agrandissent pas seules : redimensionne-les, puis recale x de toutes celles qui suivent sur la ligne. Après un changement de parent, recale x et y.
 - La Revue et la Couverture se mettent à jour dans un lancement dédié, après la recette. Couverture existante gardée (`perimetre-valide.json`) : pas de page `Couverture`, ses chiffres vont en tête de la Revue. L'Arborescence se construit depuis `perimetre-valide.json`.
 
 ## Brancher une copie d'écran (katiro-ui-kit-templates, lots `E{nn}`)
