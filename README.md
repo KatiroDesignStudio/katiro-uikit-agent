@@ -5,7 +5,7 @@ Un agent pour Claude Code qui range le UI Kit d'un fichier Figma, puis branche t
 ## Installer
 Ajoute le catalogue Katiro Studio, puis installe le plugin :
 ```bash
-claude plugin marketplace add KatiroDesignStudio/katiro-uikit-agent
+claude plugin marketplace add KatiroDesignStudio/katiro-plugins
 ```
 ```bash
 claude plugin install katiro-ui-kit@katiro-studio
