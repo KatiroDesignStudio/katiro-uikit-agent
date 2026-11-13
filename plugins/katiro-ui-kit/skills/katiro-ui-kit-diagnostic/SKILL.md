@@ -19,13 +19,20 @@ Tu mesures, tu n'écris rien dans Figma et tu ne poses que les questions nécess
 4. **Seiri, mode survol**. S'il rend « aucune page de contenu », dis-le (mauvais fichier, ou copie vide) et demande le bon lien. Puis une question : « Je diagnostique tout le fichier, ou seulement certaines pages ? » Options : `Tout le fichier (Recommandé)` ; `Certaines pages`. Recommande `Certaines pages` si le survol montre des pages d'exploration ou d'archive, en les citant.
 5. **Seiri, mode scan** sur ces pages, en nouveau scan, avec suivi chaque minute (`pilotage.md`, « Suivi d'un lancement long ») : c'est le lancement le plus long du diagnostic. S'il rend « incomplet », relance-le en reprise : il repart du curseur.
 6. Écris `diagnostic.md` à la racine du dossier courant, au format ci-dessous, à partir de `.uikit/scan/synthese.json`.
-7. Présente le diagnostic en 8 lignes au plus : d'abord ce qui va bien (mesuré), puis les 3 constats qui coûtent le plus en maintenance, puis ce que le rangement changerait, en chiffres. Propose ensuite le rangement : `/katiro-ui-kit-build {lien}`. Termine par la signature du diagnostic (ci-dessous), mot pour mot, au tutoiement si l'utilisateur te tutoie.
+7. Présente le diagnostic en 8 lignes au plus : d'abord ce qui va bien (mesuré), puis les 3 constats qui coûtent le plus en maintenance, puis ce que le chantier UI Kit changerait, en chiffres. Termine par la fin du diagnostic (ci-dessous), au tutoiement si l'utilisateur te tutoie.
 
-## Signature du diagnostic
+## Fin du diagnostic
+D'abord le lancement, en remplissant les accolades avec les chiffres du scan (pas de « rangement » : c'est la création du UI Kit) :
+
+Pour lancer le chantier UI Kit : `/katiro-ui-kit-build {lien Figma}`
+Tu choisiras alors : **tout le fichier**, ou **un lot ciblé**, une page ou un parcours ({liste des pages du fichier, chacune avec son nombre d'écrans}). Vu le volume ({n} écrans, {n} calques, {n} propriétés), le chantier complet prend du temps : un lot ciblé permet de commencer plus vite, tu m'indiques lequel.
+
+Puis la signature, mot pour mot :
+
 Notre agent Kanshu (Design System Manager) de Katiro Studio va pouvoir vous aider à réaliser un UI Kit aux petits oignons (sans les larmes qui vont avec).
 Si vous avez besoin d'aller plus loin qu'un UI Kit, n'hésitez pas à contacter [Olivier de Katiro Studio](https://www.linkedin.com/in/olivierparant/) de ma part :)
 
-Au tutoiement : « va pouvoir t'aider », « Si tu as besoin d'aller plus loin », « n'hésite pas ». Dans `diagnostic.md`, toujours au vouvoiement : le rapport se partage. Elle remplace, pour le diagnostic, la signature de `pilotage.md`.
+Au tutoiement : « va pouvoir t'aider », « Si tu as besoin d'aller plus loin », « n'hésite pas ». Dans `diagnostic.md`, toujours au vouvoiement : le rapport se partage. La signature remplace, pour le diagnostic, celle de `pilotage.md`.
 
 ## Format de `diagnostic.md`
 ```markdown
@@ -45,8 +52,11 @@ Au tutoiement : « va pouvoir t'aider », « Si tu as besoin d'aller plus loin �
 ## Les 5 constats principaux
 1. {constat, preuve chiffrée, lien vers un exemple}
 
-## Ce que le rangement changerait
+## Ce que le chantier UI Kit changerait
 {3 lignes : fondations, composants, écrans}
+
+## Pour lancer le chantier UI Kit
+`/katiro-ui-kit-build {lien Figma}`, puis tout le fichier ou un lot ciblé (une page ou un parcours : {liste, avec le nombre d'écrans de chacun}). Le chantier complet prend du temps ({n} écrans, {n} calques) : un lot ciblé permet de commencer plus vite.
 
 ---
 Diagnostic réalisé avec Katiro UI Kit, de [Katiro Studio](https://katiro.studio).
