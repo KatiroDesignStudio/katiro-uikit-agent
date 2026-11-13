@@ -8,7 +8,7 @@
     {
       "name": "katiro-agent-kansoku",
       "source": "./plugins/katiro-agent-kansoku",
-      "description": "Remet au propre le UI Kit d'un fichier Figma en logique atomique : diagnostic en lecture seule (diagnostic), construction du kit validée par un Lead Design System, en mode express ou fin (ui-kit), branchement des écrans sur des copies, écran par écran ou parcours par parcours (ecrans). Relevé en lecture seule (seiri), construction par un UI Product Designer (seiton), écritures simples par un agent léger (seiso)"
+      "description": "Remet au propre le UI Kit d'un fichier Figma en logique atomique : diagnostic en lecture seule (katiro-ui-kit-diagnostic), construction du kit validée par un Lead Design System, en mode express ou fin (katiro-ui-kit-build), branchement des écrans sur des copies, écran par écran ou parcours par parcours (katiro-ui-kit-templates). Relevé en lecture seule (katiro-seiri), construction par un UI Product Designer (katiro-seiton), écritures simples par un agent léger (katiro-seiso)"
     }
   ]
 }

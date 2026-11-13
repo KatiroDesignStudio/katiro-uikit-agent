@@ -21,22 +21,20 @@ Puis ouvre une nouvelle session Claude Code.
 
 Écris simplement ta demande dans Claude Code :
 
-| Tu écris | Ce qui se passe | Raccourci |
+| Tu écris | Ce qui se passe | Commande |
 |---|---|---|
-| « Fais un diagnostic de mon fichier Figma : {lien} » | Un rapport chiffré de l'état du fichier. Rien n'est modifié. | `/diagnostic` |
-| « Range le UI Kit de mon fichier Figma : {lien} » | Le kit est reconstruit au propre : fondations, atomes, molécules, organismes. Tes écrans ne bougent pas. | `/ui-kit` |
-| « Branche l'écran Accueil sur le UI Kit » | Une copie de l'écran est branchée sur le kit, un écran ou un parcours à la fois. | `/ecrans` |
-
-Si un autre outil installé utilise déjà le même raccourci, tape `/katiro-agent-kansoku:diagnostic` (et de même pour les deux autres).
+| « Fais un diagnostic de mon fichier Figma : {lien} » | Un rapport chiffré de l'état du fichier. Rien n'est modifié. | `/katiro-ui-kit-diagnostic` |
+| « Range le UI Kit de mon fichier Figma : {lien} » | Le kit est reconstruit au propre : fondations, atomes, molécules, organismes. Tes écrans ne bougent pas. | `/katiro-ui-kit-build` |
+| « Branche l'écran Accueil sur le UI Kit » | Une copie de l'écran est branchée sur le kit, un écran ou un parcours à la fois. | `/katiro-ui-kit-templates` |
 
 ## Les agents
 | Agent | Rôle | Modèle |
 |---|---|---|
-| **Kanshu** (Design System Manager) | Te parle, te fait valider, contrôle | celui de ta conversation |
-| **Shindan** (Designer Diagnostic) | Réalise le diagnostic | celui de ta conversation |
-| **Seiri** (Designer Analyst) | Mesure le fichier, en lecture seule | Sonnet |
-| **Seiton** (Designer Builder) | Construit ce qui a été validé | Opus |
-| **Seiso** (Designer Finisher) | Fait les finitions | Sonnet |
+| **L'agent Kanshu** (Design System Manager) de Katiro Studio | Te parle, te fait valider, contrôle | celui de ta conversation |
+| **L'agent Shindan** (Designer Diagnostic) de Katiro Studio | Réalise le diagnostic | celui de ta conversation |
+| **Katiro Seiri** (Designer Analyst) | Mesure le fichier, en lecture seule | Sonnet |
+| **Katiro Seiton** (Designer Builder) | Construit ce qui a été validé | Opus |
+| **Katiro Seiso** (Designer Finisher) | Fait les finitions | Sonnet |
 
 Pour économiser, choisis Sonnet pour ta conversation : le travail lourd se fait dans les agents.
 
