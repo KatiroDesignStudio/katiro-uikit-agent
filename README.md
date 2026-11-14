@@ -53,7 +53,7 @@ Pour économiser, choisis Sonnet pour ta conversation : le travail lourd se fait
 - **Rien sans ton accord.** Chaque déduction t'est présentée avec ses preuves et une recommandation. Tu valides tout d'un coup, ou tu corriges les points qui ne te vont pas.
 - **Rien n'est supprimé.** Ce qui est remplacé part dans une page `Archives`.
 - **Tes écrans d'origine ne sont jamais modifiés.**
-- **Tout est noté** dans `uikit.md` : décisions, avancement, questions. On reprend là où on s'est arrêté.
+- **Tout est noté** dans `uikit.md` : décisions, avancement, questions. On reprend là où on s'est arrêté. Les décisions clés sont aussi gardées dans la page Revue du fichier Figma : on reprend depuis n'importe quel poste.
 - **Tu sais où on en est.** Pendant les longs travaux (scan, construction), tu as des nouvelles chaque minute.
 
 ## Ce qu'il ne fait pas

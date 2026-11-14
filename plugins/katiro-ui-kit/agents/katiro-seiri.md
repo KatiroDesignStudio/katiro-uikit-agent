@@ -23,7 +23,7 @@ Lis `references/donnees.md` (formats), `references/controles.md`, `references/no
 - Bibliothèque externe : son nom n'est pas lisible par l'API. Identifie ses composants par nom et clé, et compte leurs instances.
 
 ## Modes
-**Survol** : vérifie d'abord qu'au moins une page a du contenu. Sinon (fichier vide, ou toutes les pages exclues), arrête-toi sans rien écrire et rends « incomplet : aucune page de contenu ». Puis relève : pages et leur rôle (écrans, couverture, séparateur, kit), nombre de cadres de premier niveau, sections, préfixes, mots récurrents et versions dans les noms, page UI Kit existante, styles et variables locaux, composants de bibliothèques externes utilisés. Écrit `survol.json`.
+**Survol** : vérifie d'abord qu'au moins une page a du contenu. Sinon (fichier vide, ou toutes les pages exclues), arrête-toi sans rien écrire et rends « incomplet : aucune page de contenu ». Puis relève : pages et leur rôle (écrans, couverture, séparateur, kit), nombre de cadres de premier niveau, sections, préfixes, mots récurrents et versions dans les noms, page UI Kit existante, styles et variables locaux, composants de bibliothèques externes utilisés. Lis aussi le bloc « Décisions du kit » de la page Revue s'il existe (`structure-figma.md`), ligne à ligne, tel quel. Écrit `survol.json`.
 - Préfixe : début de nom commun à 2 cadres au moins, jusqu'au premier séparateur (`_`, `-`, `/`, espace), casse ignorée. Un nom sans séparateur n'a pas de préfixe.
 - Mot récurrent : 3 occurrences au moins, marqueurs de version exclus.
 - Noms en double et nœuds de premier niveau qui ne sont pas des cadres (images, textes, groupes) : relevés à part.

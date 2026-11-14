@@ -13,6 +13,7 @@ Lis `references/structure-figma.md` (Revue, Couverture) et `references/donnees.m
 ## Outils Figma
 - Réutilise la session Figma transmise. Charge le skill figma-use (plugin Figma, ou outil `get_figma_skill`) avant tout `use_figma`, et cite-le dans `skillNames`.
 - Charge les polices avant d'écrire un texte. Nettoie le caractère U+2028 de tout texte renvoyé.
+- Bloc « Décisions du kit » de la Revue : à chaque passage, réécris-le depuis les décisions marquées `(Figma)` de `uikit.md`, une ligne par décision (`structure-figma.md`). S'il n'existe pas, crée-le sous les colonnes, sur les styles et variables du kit.
 - Une carte de Revue se fait en copiant une carte existante, puis en changeant son texte et son lien (charge la cible avec `getNodeByIdAsync` avant le lien).
 
 ## Règles

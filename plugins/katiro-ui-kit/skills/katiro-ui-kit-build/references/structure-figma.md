@@ -61,6 +61,7 @@ Toute variable ou tout style créé après la phase 2 y est ajouté dans le mêm
 - Trois colonnes : **Fait** (créé), **Ajusté** (corrigé, fusionné, relié), **À décider** (questions reportées ou avec le client).
 - Une carte par famille (« Button : 3 doublons fusionnés, 2 états ajoutés »), sans numéro de lot, avec un lien vers la section (la première dans l'ordre de la page si la carte en couvre plusieurs). Le titre peut passer à la ligne.
 - Pas de paragraphe.
+- **Décisions du kit**, sous les trois colonnes : une ligne par décision, `{thème} · {décision} · {date}`, cadre `section/Décisions du kit`. Seulement les décisions qu'on ne voit pas dans le kit lui-même et qu'une reprise reposerait sinon : périmètre et exclusions, arborescence, police, règles de dérivation des états, exceptions d'échelle, noms gardés hors format, points à trancher au branchement, points reportés. Pas ce qui se voit dans les composants (un état ajouté, un nom corrigé). Environ 10 à 15 lignes. Mis à jour à chaque passage de la Revue. C'est la mémoire du projet qui voyage avec le fichier : `uikit.md` reste le détail, sur la machine du chantier.
 
 ## Arborescence
 - En tête : « {n} écrans de référence · {e} espaces · relevé du {date} ». Les écrans exclus sont seulement comptés.
