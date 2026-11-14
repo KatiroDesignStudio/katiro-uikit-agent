@@ -29,7 +29,7 @@ Logique BEM, traduite dans les outils natifs de Figma : un développeur lit `But
 - Titre bicolore : propriétés texte `title` et `titleAccent`, booléen `showTitleAccent`, variante `accentPosition` (`end`, `start`).
 
 ## Calques
-En minuscules, `kebab-case`, choisis dans ce vocabulaire : `container`, `content`, `icon`, `icon-leading`, `icon-trailing`, `label`, `text`, `title`, `description`, `helper-text`, `error-text`, `input`, `placeholder`, `image`, `avatar`, `badge`, `indicator`, `divider`, `action`, `actions`, `overlay`, `tag`, `tag-group`, `text-accent`, `form`, `column`, `logo`, `decor`, `filter-bar`, `check-list`, `screenshot`.
+En minuscules, `kebab-case`, choisis dans ce vocabulaire : `container`, `focus-ring`, `error-message`, `content`, `icon`, `icon-leading`, `icon-trailing`, `label`, `text`, `title`, `description`, `helper-text`, `error-text`, `input`, `placeholder`, `image`, `avatar`, `badge`, `indicator`, `divider`, `action`, `actions`, `overlay`, `tag`, `tag-group`, `text-accent`, `form`, `column`, `logo`, `decor`, `filter-bar`, `check-list`, `screenshot`.
 Un rôle hors vocabulaire est un doute pendant la construction (Seiton), un écart au contrôle (Seiri). Aucun nom généré par Figma (`Frame 247`, `Rectangle 12`).
 Pages de présentation (`Couverture`, `Revue`, `Arborescence`, `UI Kit · Fondations`) : les calques d'échantillon portent le nom du jeton montré (`color/violet/500`, `shadow/sm`) ; les cadres s'appellent `titre`, `section/{nom}`, `colonne/{nom}`, `carte/{nom}`, `espace/{nom}`, `branche/{nom}`, `ecran/{nom}`. Dans `UI Kit · Atomes` à `UI Kit · Organismes`, une section de famille porte le nom du composant (`Button`).
 
@@ -52,7 +52,7 @@ Pages de présentation (`Couverture`, `Revue`, `Arborescence`, `UI Kit · Fondat
 
 ## Styles
 - Texte : `text/{rôle}/{taille}` (`text/heading/xl`, `text/body/md`, `text/label/sm`), branchés sur `dimensions`.
-- Effets : `shadow/sm`, `shadow/md`, `shadow/lg`, `ring/focus`. Une couleur d'effet reliée à une variable opaque perd son alpha : elle se relie à un rôle `semantic` (`color/border/focus` pour `ring/focus`, `color/shadow/{taille}` pour les ombres) qui pointe vers une primitive avec alpha (`color/violet/800-a24`). Flou d'arrière-plan : `blur/{nom}`.
+- Effets : `shadow/sm`, `shadow/md`, `shadow/lg`. Le focus n'est pas un effet : c'est un calque `focus-ring` (`controles.md`). Une couleur d'effet reliée à une variable opaque perd son alpha : elle se relie à un rôle `semantic` (`color/shadow/{taille}`) qui pointe vers une primitive avec alpha (`color/violet/800-a24`). Flou d'arrière-plan : `blur/{nom}`.
 - Grilles : un style par point de rupture, `grid/mobile`, `grid/desktop`, branché sur `layout`. Les points de rupture sont une question de phase 2.
 
 ## Icônes

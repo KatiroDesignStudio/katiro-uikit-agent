@@ -20,7 +20,7 @@ Lis `uikit.md`, `.uikit/perimetre-valide.json`, `.uikit/ids.json` s'il existe (t
 - Comptages (relevé `debut` compris) : charge chaque page (`setCurrentPageAsync`) avant de compter, sinon elle compte 0 enfant.
 - Un `use_figma` en erreur est annulé en entier : rien n'est écrit, relance l'appel complet corrigé.
 - Instance exposée (`isExposedInstance`) : seulement une fois le parent converti en composant.
-- Variante `focus` : `clipsContent = true`, sinon l'étalement de `ring/focus` ne s'affiche pas.
+- Jamais `clipsContent = true` sur un composant ni sur une variante : ce qui dépasse (case, anneau, ombre) serait coupé. Le focus est un calque `focus-ring` (`controles.md`), jamais une ombre portée. Après chaque composant, vérifie par capture qu'aucune variante n'est coupée.
 - Épaisseurs de contour : relie chaque côté (`strokeTopWeight`…), pas `strokeWeight`.
 - SVG fourni par Kanshu : `figma.createNodeFromSvg` ; licence et source dans `ids.json`, pas dans la description.
 
