@@ -30,6 +30,8 @@ Selon `kitExistant` (`perimetre-valide.json`) :
 | `repris` | Je le reconstruis au propre | Pages du plugin ; ses pages passent dans `Archives` une fois vidées | Familles conformes déplacées telles quelles dans leur page de niveau ; les autres reconstruites à partir de copies. Variables et styles gardés, seulement renommés (une nouvelle valeur donne une nouvelle variable) | Tous les points, comme un fichier sans kit |
 | `intact` | Je n'y touche pas | Ses pages passent après le séparateur | Ignorés | Comme un fichier sans kit |
 
+**Pages du plugin déjà présentes** (`Couverture`, `Revue`, `Arborescence`, d'un chantier précédent) : jamais réutilisées ni ignorées sans question. Une question individuelle par page, au récapitulatif du périmètre : « La page {page} existe déjà. Qu'est-ce que je fais de cette page ? » Options : `Je la mets à jour (Recommandé)` ; `Je la refais` (l'ancienne part dans `Archives`) ; `Je n'y touche pas`. Une page supprimée depuis est recréée. Les parcours de l'`Arborescence` existante sont montrés et recommandés au récapitulatif du périmètre, avant tout autre découpage.
+
 **Famille conforme** : toutes ses valeurs reliées à une variable ou un style, nom et propriétés au format de `nomenclature.md`, contrastes réussis, états attendus présents.
 
 **Retouche sans changer le rendu**, seule modification permise sur un composant existant : renommer (composant, propriété, calque) ; relier une valeur à une variable ou un style **de même valeur** ; ajouter une variante ou une propriété dont la valeur par défaut garde le rendu actuel ; déplacer une section ou un component set dans sa page de niveau (ses instances restent liées). Tout ce qui changerait le rendu de ses variantes (valeur, taille, structure) devient une nouvelle variante, ou un doute. Les instances des écrans suivent ces retouches sans changer d'apparence : les maquettes ne sont pas impactées.
@@ -61,9 +63,11 @@ Toute variable ou tout style créé après la phase 2 y est ajouté dans le mêm
 - Pas de paragraphe.
 
 ## Arborescence
-- En tête : « {n} écrans de référence · {p} parcours · relevé du {date} ». Les écrans exclus sont seulement comptés.
-- Un arbre en auto-layout : un nœud par parcours, puis ses écrans. Traits simples entre les nœuds, recalculés à chaque passage (les connecteurs n'existent pas en Figma Design).
-- Chaque écran : nom, lien vers l'écran d'origine (et vers sa copie dans `Écrans kit` une fois branché), et une vignette tant qu'il y a 60 écrans au plus (au-delà, pas de vignette). Vignette : copie réduite, recadrée à 1 200 px de haut à l'échelle d'origine, verrouillée, liens de prototype retirés.
+- En tête : « {n} écrans de référence · {e} espaces · relevé du {date} ». Les écrans exclus sont seulement comptés.
+- **Une arborescence par espace d'accès** (public, client connecté, administration…), jamais plus : les sous-parties d'un espace (pages légales, demandes, prospection) sont des branches de son arbre, pas des arborescences séparées.
+- **Un arbre de profondeur**, tiré de `arbre` (`perimetre-valide.json`) : la racine de chaque espace est son écran d'entrée (accueil du site, connexion, ou tableau de bord sans écran de connexion), puis les écrans qu'il ouvre, puis leurs enfants un niveau plus bas, autant de niveaux que la navigation (un article est sous la page Blog, « Demande · Nouvelle » sous « Demandes »). En auto-layout, traits simples du parent vers ses enfants, recalculés à chaque passage (les connecteurs n'existent pas en Figma Design).
+- Chaque écran : son nom et un lien vers l'écran d'origine (et vers sa copie dans `Écrans kit` une fois branché), dans une case de texte.
+- **Un schéma de noms, jamais d'image** : aucune vignette, capture, copie ni instance d'écran. Les écrans évoluent : une image serait vite fausse.
 
 ## Archives
 - Un cadre `{écran}` par écran branché ; l'élément y garde sa taille d'origine (fixée avant le déplacement).

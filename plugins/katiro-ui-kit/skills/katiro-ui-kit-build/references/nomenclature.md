@@ -31,7 +31,7 @@ Logique BEM, traduite dans les outils natifs de Figma : un développeur lit `But
 ## Calques
 En minuscules, `kebab-case`, choisis dans ce vocabulaire : `container`, `content`, `icon`, `icon-leading`, `icon-trailing`, `label`, `text`, `title`, `description`, `helper-text`, `error-text`, `input`, `placeholder`, `image`, `avatar`, `badge`, `indicator`, `divider`, `action`, `actions`, `overlay`, `tag`, `tag-group`, `text-accent`, `form`, `column`, `logo`, `decor`, `filter-bar`, `check-list`, `screenshot`.
 Un rôle hors vocabulaire est un doute pendant la construction (Seiton), un écart au contrôle (Seiri). Aucun nom généré par Figma (`Frame 247`, `Rectangle 12`).
-Pages de présentation (`Couverture`, `Revue`, `Arborescence`, `UI Kit · Fondations`) : les calques d'échantillon portent le nom du jeton montré (`color/violet/500`, `shadow/sm`) ; les cadres s'appellent `titre`, `section/{nom}`, `colonne/{nom}`, `carte/{nom}`, `parcours/{nom}`, `ecran/{nom}`. Dans `UI Kit · Atomes` à `UI Kit · Organismes`, une section de famille porte le nom du composant (`Button`).
+Pages de présentation (`Couverture`, `Revue`, `Arborescence`, `UI Kit · Fondations`) : les calques d'échantillon portent le nom du jeton montré (`color/violet/500`, `shadow/sm`) ; les cadres s'appellent `titre`, `section/{nom}`, `colonne/{nom}`, `carte/{nom}`, `espace/{nom}`, `branche/{nom}`, `ecran/{nom}`. Dans `UI Kit · Atomes` à `UI Kit · Organismes`, une section de famille porte le nom du composant (`Button`).
 
 ## Variables
 | Collection | Contenu | Exemples |
