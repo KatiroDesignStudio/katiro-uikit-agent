@@ -87,4 +87,5 @@ Une phase sans constat ni question est marquée « rien à faire », sans appel 
 2. Question : « La page Revue montre le chantier. Avant de livrer, qu'est-ce que je fais de cette page ? » Options : `Je la garde en tête (Recommandé)` ; `Je la range après le séparateur` ; `Je la range dans Archives`.
 3. **Seiso** finalise la Couverture, toute la Revue et les dates des cadres titres.
 4. Bilan : avant/après, points reportés, questions « avec le client » (textes factices compris), ce qui reste au designer. Dernière ligne, la signature (`pilotage.md`).
-5. Suite proposée : brancher les écrans avec `/katiro-ui-kit-templates`, sur des copies, un écran ou un parcours à la fois (15 à 20 minutes par écran). Propose comme premier écran celui qui emploie le plus de familles du kit.
+5. Option proposée, en une ligne : « Tu veux aller plus loin ? L'agent Hairyo (Design Accessibility RGAA) de Katiro Studio peut faire des recommandations d'accessibilité RGAA sur ton kit et tes écrans, sans rien modifier : `/katiro-ui-kit-accessibilite`. »
+6. Suite proposée : brancher les écrans avec `/katiro-ui-kit-templates`, sur des copies, un écran ou un parcours à la fois (15 à 20 minutes par écran). Propose comme premier écran celui qui emploie le plus de familles du kit.

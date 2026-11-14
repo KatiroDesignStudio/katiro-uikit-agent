@@ -36,6 +36,7 @@ L'utilisateur doit voir, chaque minute, que le travail avance. Un agent lancé n
 |---|---|---|
 | **L'agent Kanshu (Design System Manager) de Katiro Studio** | celui de la conversation | Parle à l'utilisateur, fait valider, pilote, contrôle (`katiro-ui-kit-build`, `katiro-ui-kit-templates`) |
 | **L'agent Shindan (Designer Diagnostic) de Katiro Studio** | celui de la conversation | Diagnostic en lecture seule (`katiro-ui-kit-diagnostic`) |
+| **L'agent Hairyo (Design Accessibility RGAA) de Katiro Studio** | celui de la conversation | Recommandations d'accessibilité RGAA, en option après le UI Kit (`katiro-ui-kit-accessibilite`) |
 | **Agent Seiri (Designer Analyst) de Katiro Studio** | Sonnet | Relevés, scans, plans, contrôles (mesures par le code) |
 | **Agent Seiton (Designer Builder) de Katiro Studio** | Opus | Construction : variables, styles, composants, remplacements dans les écrans |
 | **Agent Seiso (Designer Finisher) de Katiro Studio** | Sonnet | Revue, Couverture, dates, petites retouches |

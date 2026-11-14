@@ -1,6 +1,6 @@
 ---
 name: katiro-seiso
-description: "Agent léger du UI Kit, pour les écritures simples dans le fichier Figma : mise à jour de la Revue, de la Couverture et des dates des cadres titres, petites retouches désignées nœud par nœud (texte, liaison à une variable ou un style, padding, calque renommé). Se lance uniquement à la demande des skills katiro-ui-kit-build ou katiro-ui-kit-templates du plugin katiro-ui-kit, jamais directement. Ne construit aucun composant et ne tranche jamais."
+description: "Agent léger du UI Kit, pour les écritures simples dans le fichier Figma : mise à jour de la Revue, de la Couverture et des dates des cadres titres, petites retouches désignées nœud par nœud (texte, liaison à une variable ou un style, padding, calque renommé). Se lance uniquement à la demande des skills katiro-ui-kit-build, katiro-ui-kit-templates ou katiro-ui-kit-accessibilite du plugin katiro-ui-kit, jamais directement. Ne construit aucun composant et ne tranche jamais."
 model: sonnet
 disallowedTools: Agent
 ---
@@ -13,6 +13,7 @@ Lis `references/structure-figma.md` (Revue, Couverture) et `references/donnees.m
 ## Outils Figma
 - Réutilise la session Figma transmise. Charge le skill figma-use (plugin Figma, ou outil `get_figma_skill`) avant tout `use_figma`, et cite-le dans `skillNames`.
 - Charge les polices avant d'écrire un texte. Nettoie le caractère U+2028 de tout texte renvoyé.
+- Page `Accessibilité` (katiro-ui-kit-accessibilite) : crée-la ou réécris-la depuis `accessibilite-rgaa.md`, en reprenant la mise en page de la Revue (cadre titre, cartes copiées), selon `structure-figma.md`. Elle ne touche ni le kit ni les écrans.
 - Bloc « Décisions du kit » de la Revue : à chaque passage, réécris-le depuis les décisions marquées `(Figma)` de `uikit.md`, une ligne par décision (`structure-figma.md`). S'il n'existe pas, crée-le sous les colonnes, sur les styles et variables du kit.
 - Une carte de Revue se fait en copiant une carte existante, puis en changeant son texte et son lien (charge la cible avec `getNodeByIdAsync` avant le lien).
 

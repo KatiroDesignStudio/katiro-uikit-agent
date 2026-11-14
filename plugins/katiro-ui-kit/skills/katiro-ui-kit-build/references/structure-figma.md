@@ -7,6 +7,7 @@ Règle fixe du plugin. Seiton la met en place en phase 1 de `katiro-ui-kit-build
 |---|---|
 | `Couverture` | Nom du projet, date, chiffres avant/après, nombre d'écrans de référence, liens vers chaque page du kit |
 | `Revue` | Le compte rendu du chantier |
+| `Accessibilité` | Seulement si `katiro-ui-kit-accessibilite` a été lancé : les recommandations RGAA |
 | `Arborescence` | Les écrans de référence et leurs parcours |
 | `UI Kit · Fondations` | Couleurs, typographie, espacements, rayons, bordures, opacités, ombres, grilles, icônes |
 | `UI Kit · Atomes` | |
@@ -63,6 +64,12 @@ Toute variable ou tout style créé après la phase 2 y est ajouté dans le mêm
 - Une carte par famille (« Button : 3 doublons fusionnés, 2 états ajoutés »), sans numéro de lot, avec un lien vers la section (la première dans l'ordre de la page si la carte en couvre plusieurs). Le titre peut passer à la ligne.
 - Pas de paragraphe.
 - **Décisions du kit**, sous les trois colonnes : une ligne par décision, `{thème} · {décision} · {date}`, cadre `section/Décisions du kit`. Seulement les décisions qu'on ne voit pas dans le kit lui-même et qu'une reprise reposerait sinon : périmètre et exclusions, arborescence, police, règles de dérivation des états, exceptions d'échelle, noms gardés hors format, points à trancher au branchement, points reportés. Pas ce qui se voit dans les composants (un état ajouté, un nom corrigé). Environ 10 à 15 lignes. Mis à jour à chaque passage de la Revue. C'est la mémoire du projet qui voyage avec le fichier : `uikit.md` reste le détail, sur la machine du chantier.
+
+## Accessibilité
+- En tête, en évidence : l'avertissement de `katiro-ui-kit-accessibilite` (une aide, pas un audit, ni taux ni déclaration de conformité ; audit par un expert pour aller plus loin), puis « RGAA 4.1.2 · {date} · Agent Hairyo (Design Accessibility RGAA) de Katiro Studio ».
+- Trois colonnes : **À corriger** (une carte par critère : intitulé court, constat, correction, lien vers un exemple et vers le critère), **À prévoir pour le développement** (une carte par écran ou « Tous les écrans »), **Respecté sur la maquette** (une carte, la liste des critères).
+- Une ligne en pied : « {n} critères non évaluables sur maquette, {n} non applicables : voir accessibilite-rgaa.md ».
+- Recréée à chaque lancement, l'ancienne version part dans `Archives`. Elle ne touche ni le kit ni les écrans.
 
 ## Arborescence
 - En tête : « {n} écrans de référence · {e} espaces · relevé du {date} ». Les écrans exclus sont seulement comptés.
